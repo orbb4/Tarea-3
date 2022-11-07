@@ -13,17 +13,17 @@ public class Ventana extends JFrame {
     private PanelPrincipal panelPrincipal;
     public Ventana(){
         super();
-        //expPanel.add(new JButton("sskdkdsf"), BorderLayout.EAST);
-        this.setLayout(new BorderLayout());
+        this.setLayout(null);
         this.setTitle("Expendedor");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
         this.setSize(1366, 700); 
         this.setVisible(true); 
         this.setResizable(false);
         panelPrincipal = new PanelPrincipal(COLOR_PANEL, new int[] {120, 50, 600, 900}, comprador);
-        this.add(panelPrincipal);
+        
         Boton();
         this.add(comprador);
+        this.add(panelPrincipal);
    } 
    
     private void Boton(){
