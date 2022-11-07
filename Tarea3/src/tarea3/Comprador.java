@@ -42,13 +42,14 @@ public class Comprador{
         vuelto = vueltot;
         
         //relacionado al dibujo
-        this.x=x+500;
-        this.y=y+500;
+        this.x=x+1000;
+        this.y=y+200;
         
     }
     public void paint(Graphics g){
         g.setColor(Color.ORANGE);
         g.fillOval(x, y, 100, 100);
+        g.fillRect(x, y+100, 100, 400);
 
     }  
 
