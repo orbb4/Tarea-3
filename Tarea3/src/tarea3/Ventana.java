@@ -27,7 +27,7 @@ public class Ventana extends JFrame {
         //Botones();
         this.add(comprador);
         this.add(panelPrincipal);
-        Botones();
+        //Botones();
    } 
    
     private void Botones(){
