@@ -3,10 +3,10 @@ import java.awt.*;
 import javax.swing.*;
 public class Paneles extends JPanel{
         private Color color;
-        //private Comprador comprador;
+        private Comprador comprador;
         private int[] rect; // dimensiones del rectangulo (x, y, ancho, alto)
         public Paneles(Color color, int[] rect, Comprador com){
-            //comprador = com;
+            comprador = com;
             this.setBackground(this.color); //se le asigna un color al panel
             this.setLayout(null);
             this.rect = rect;

@@ -18,7 +18,7 @@ public class Ventana extends JFrame {
         this.setLayout(new BorderLayout());
         this.setTitle("Expendedor");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
-        this.setSize(1000,800); 
+        this.setSize(800, 700); 
         this.setVisible(true); 
         this.setResizable(false);
 
