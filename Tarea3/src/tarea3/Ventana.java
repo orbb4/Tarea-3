@@ -3,7 +3,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Ventana extends JFrame { 
-
+    private final Color COLOR_PANEL = new Color(50, 50, 160);
     public Ventana(){
     super();
     this.setLayout(new BorderLayout());
@@ -12,6 +12,7 @@ public class Ventana extends JFrame {
     this.setSize(1000,800); 
     this.setVisible(true); 
     this.setResizable(false);
+    this.add(new Paneles(COLOR_PANEL, new int[] {0, 0, 250, 250}));
    } 
 }
 
