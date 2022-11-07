@@ -13,12 +13,13 @@ public class PanelPrincipal extends JPanel{
         }
         public void paint(Graphics g){
             super.paint(g);       
-            Toolkit t = Toolkit.getDefaultToolkit(); 
-            Image i = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
-            g.drawImage(i, 520,160, 100, 80, this);  
+            
             g.fillRect(rect[0], rect[1], rect[2], rect[3]);
             g.setColor(color);     
             comprador.paint(g);
+            Toolkit t = Toolkit.getDefaultToolkit(); 
+            Image i = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
+            g.drawImage(i, 520,160, 100, 80, this);  
 
     }
 }
