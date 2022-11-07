@@ -42,16 +42,14 @@ public class Comprador{
         vuelto = vueltot;
         
         //relacionado al dibujo
-        this.x=x;
-        this.y=y;
-        p = new Polygon();
-        p.addPoint(x,y);
-        p.addPoint(x+120, y+50);
-        p.addPoint(x+40, y+150);
+        this.x=x+500;
+        this.y=y+500;
+        
     }
     public void paint(Graphics g){
-        g.setColor(Color.red);
-        if(p!=null)g.drawPolygon(p);
+        g.setColor(Color.ORANGE);
+        g.fillOval(x, y, 100, 100);
+
     }  
 
     public int cuantoVuelto(){
