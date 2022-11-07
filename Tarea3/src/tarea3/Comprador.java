@@ -1,9 +1,6 @@
 package tarea3;
 import java.awt.*;
-import javax.swing.JButton;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-public class Comprador extends JButton{    
+public class Comprador{    
     private String tipoBebida = null;
     private int vuelto = 0;    
     
@@ -48,11 +45,9 @@ public class Comprador extends JButton{
         vuelto = vueltot;
         
         //relacionado al dibujo
-        this.x=x+1000;
+        this.x=x+900;
         this.y=y+200;
         
-        //Relacionado con eventos
-        this.addMouseListener(new EscuchaRaton());
     }
     public void paint(Graphics g){
         g.setColor(cUp);
@@ -61,6 +56,29 @@ public class Comprador extends JButton{
         g.setColor(cDown);
         g.fillRect(x, y+100, 100, 400);
 
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillRect(1100, 0, 366,700);
+        
+        g.setColor(Color.YELLOW);
+        g.fillOval(1188, 100, 100, 100);
+        g.setColor(Color.ORANGE);
+        g.fillOval(1188, 300, 100, 100);
+        g.setColor(Color.RED);
+        g.fillOval(1188, 500, 100, 100);
+        
+        //REFERENCIAS
+        g.setColor(Color.YELLOW);
+        g.fillOval(100, 10, 20, 25);
+        g.setColor(Color.ORANGE);
+        g.fillOval(500, 10, 20, 25);
+        g.setColor(Color.RED);
+        g.fillOval(900, 10, 20, 25);
+        
+        g.setColor(Color.BLACK);
+        g.drawString("100 = ", 70, 30);
+        g.drawString("500 = ", 470, 30);
+        g.drawString("1000 = ", 860, 30);
+        
     }  
 
     public int cuantoVuelto(){
@@ -69,26 +87,4 @@ public class Comprador extends JButton{
     public String queBebiste(){
         return tipoBebida;
     }
-    private class EscuchaRaton implements MouseListener {
-        public void mouseClicked(MouseEvent me) {;}
-        public void mousePressed(MouseEvent me) {
-            if(me.getY() <= y+100 && me.getX() > x && me.getX() < x+100){
-                System.out.println("arriba");
-                cUp = new Color(255, 171, 0);
-            }
-            if(me.getY() > y+100 && me.getX() > x && me.getX() < x+100){
-                System.out.println("abajo");
-                cDown = new Color(255, 171, 0);
-            }
-        } 
-        public void mouseReleased(MouseEvent me){
-            cUp = new Color(216,145,1);
-            cDown = new Color(216,145,1);
-        }
-        public void mouseEntered(MouseEvent me){
-        }
-        public void mouseExited(MouseEvent me){
-        }
-
-   }
 }
