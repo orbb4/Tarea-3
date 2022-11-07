@@ -15,7 +15,7 @@ public class Ventana extends JFrame {
     this.setSize(1000,800); 
     this.setVisible(true); 
     this.setResizable(false);
-    this.add(new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}));
+    this.add(new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador));
    } 
 }
 
