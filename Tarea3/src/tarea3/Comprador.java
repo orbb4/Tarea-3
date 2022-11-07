@@ -8,7 +8,7 @@ public class Comprador extends JButton{
     private int vuelto = 0;    
     
     private Polygon p;
-    private int x,y;
+    private int x=0,y=0;
     
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
@@ -67,7 +67,12 @@ public class Comprador extends JButton{
     private class EscuchaRaton implements MouseListener {
      public void mouseClicked(MouseEvent me) {;}
          public void mousePressed(MouseEvent me) {
-              System.out.println("press");
+              if(me.getY() <= y+100){
+                  System.out.println("arriba");
+              }
+              if(me.getY() > y+100){
+                  System.out.println("abajo");
+              }
          }
          public void mouseReleased(MouseEvent me) {;}
          public void mouseEntered(MouseEvent me) {;}
