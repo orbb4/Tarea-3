@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 public class Ventana extends JFrame {
     Moneda moneda = new Moneda();
 
-    Expendedor expendedor = new Expendedor(10, 100);
+    Expendedor expendedor = new Expendedor(5, 100);
     Comprador comprador = new Comprador(moneda, 2, expendedor);
     //public Expendedor(int nBebidas, int precio){
     

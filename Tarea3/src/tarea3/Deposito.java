@@ -3,6 +3,9 @@ import java.awt.*;
 import java.util.ArrayList;
 class Deposito{
     private ArrayList<Bebida> bebidas;
+    private final Color NARANJO = new Color(245, 130, 60);
+    private final Color VERDE = new Color(80, 200, 95);
+    private final Color ROJO = new Color(170, 10, 20);
     public Deposito(){
         bebidas = new ArrayList();
     }
@@ -20,11 +23,42 @@ class Deposito{
     public ArrayList<Bebida> getArrayBebidas(){
         return bebidas;
     }
-    public void paint(Graphics g){
-        /* ToDo: pintar cada bebida restante en deposito
-        g.setColor(new Color(80, 140, 145));
-        g.fillRect(150, 100, 300, 500);*/
+    // tipo bebida: 0=cocacola, 1=sprite, 2=fanta
+    public void paint(Graphics g, int tipoBebida){
+        int y = 560;
+        switch (tipoBebida) {
+            
+            case 0:
+                g.setColor(ROJO);
+                for(int i = 0; i < bebidas.size(); i++){
+                    
+                    g.fillRect(150, y, 80, 40);
+                    y-= 40 + 2;
+                }             
+                
+                break;
+            case 1:
+                g.setColor(VERDE);
+                for(int i = 0; i < bebidas.size(); i++){
+                    
+                    g.fillRect(260, y, 80, 40);
+                    y-= 40 +2;
+                }
+                break;
+            case 2:
+                g.setColor(NARANJO);
+                for(int i = 0; i < bebidas.size(); i++){
+                    
+                    g.fillRect(370, y, 80, 40);
+                    y-= 40 +2;
+                }                 
+               break;
+            default:
+                break;
+        }
+        
     }
+    // cristal: g.fillRect(150, 100, 300, 500);
     // coordenadas y tamaño expendedor: 120, 50, 600, 900
     
 }
