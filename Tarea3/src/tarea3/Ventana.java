@@ -20,14 +20,16 @@ public class Ventana extends JFrame {
         this.setVisible(true); 
         this.setResizable(false);
         panelPrincipal = new PanelPrincipal(COLOR_PANEL, new int[] {120, 50, 600, 900}, comprador);     
-        panelPrincipal.setBounds(120, 50, 600, 900);
-        this.add(new PanelPrincipal(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador));
-        panelPrincipal = new PanelPrincipal(COLOR_PANEL, new int[] {120, 50, 600, 900}, comprador);
+        panelPrincipal.setBounds(0, 0, 1366, 700);
+        this.add(panelPrincipal);
         
-        //Botones();
+        Botones();
         this.add(comprador);
         this.add(panelPrincipal);
+<<<<<<< HEAD
         //Botones();
+=======
+>>>>>>> a9374080f18378faaa9449b9da1b3b1bf5313b68
    } 
    
     private void Botones(){
