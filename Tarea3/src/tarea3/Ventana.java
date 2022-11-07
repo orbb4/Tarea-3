@@ -19,8 +19,8 @@ public class Ventana extends JFrame {
         this.setSize(1366, 700); 
         this.setVisible(true); 
         this.setResizable(false);
-        panelPrincipal = new PanelPrincipal(COLOR_PANEL, new int[] {120, 50, 600, 900}, comprador);
-        
+        panelPrincipal = new PanelPrincipal(COLOR_PANEL, new int[] {120, 50, 600, 900}, comprador);     
+        panelPrincipal.setBounds(120, 50, 600, 900);
         Boton();
         this.add(comprador);
         this.add(panelPrincipal);
@@ -28,6 +28,7 @@ public class Ventana extends JFrame {
    
     private void Boton(){
         JButton boton1 = new JButton(); //en el constructor/argumento le podemos pasar texto entre comillas
+        //this.setLayout(null); testing
         boton1.setText("Click"); //se le establece un texto al botón
         boton1.setBounds(100, 100, 100, 40);
         boton1.setEnabled(true);// si está en false no se puede hacer click sobre el botón, es para habilitar o deshabilitar las funciones del botón
