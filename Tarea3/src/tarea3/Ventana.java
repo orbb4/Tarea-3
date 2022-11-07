@@ -1,8 +1,13 @@
 package tarea3;
 import java.awt.*;
 import javax.swing.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-public class Ventana extends JFrame { 
+public class Ventana extends JFrame{ 
+        //private URL CocaLogo = new URL("import java.net.MalformedURLException;\n" +
+        //"import java.net.URL;");
+    
     private final Color COLOR_PANEL = new Color(50, 50, 160);
     public Ventana(){
     super();
