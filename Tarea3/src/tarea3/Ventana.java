@@ -6,6 +6,7 @@ import javax.swing.*;
 
 public class Ventana extends JFrame { // como extiende a un JFrame, es un JFrame, pero con algunos agregados
      // propiedades que puedes agregar aquí para que compongan a Ventana. Ventana "es un" JFrame
+    public JPanel panel;
     public Ventana(){
        super();
        this.setLayout(new BorderLayout()); // aunque tiene Layout por defecto, se define uno que es mas práctico
@@ -16,5 +17,6 @@ public class Ventana extends JFrame { // como extiende a un JFrame, es un JFrame
       this.setVisible(true); 
    } 
 }
+
 
 
