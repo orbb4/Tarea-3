@@ -50,11 +50,18 @@ public class Ventana extends JFrame {
         
         JButton boton3 = new JButton(); //en el constructor/argumento le podemos pasar texto entre comillas
         boton3.setText("Fanta"); //se le establece un texto al botón
+<<<<<<< HEAD
         boton3.setBounds(620, 540, 70, 70);
         boton3.setFont(new Font("baguet script",3,12));
+=======
+        boton3.setBounds(100, 300, 100, 40);
+        //boton3.setBorder(new RoundedBorder(10));
+>>>>>>> beta
         boton3.setEnabled(true);// si está en false no se puede hacer click sobre el botón, es para habilitar o deshabilitar las funciones del botón
         //boton3.setForeground(Color.GREEN);//se le asigna un color a la letra del botón
         this.add(boton3);
+        
+        
     }
 }
 

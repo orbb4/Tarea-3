@@ -76,6 +76,8 @@ public class Comprador extends JButton{
                 System.out.println("arriba");
                 cUp = new Color(255, 171, 0);
             }
+            
+            
             if(me.getY() > y+100 && me.getX() > x && me.getX() < x+100){
                 System.out.println("abajo");
                 cDown = new Color(255, 171, 0);
@@ -84,8 +86,11 @@ public class Comprador extends JButton{
         public void mouseReleased(MouseEvent me){
             cUp = new Color(216,145,1);
             cDown = new Color(216,145,1);
+            //System.out.println("(" + me.getX() + ", " + me.getY() + ")"); debug
+            // (x, y)^^
         }
         public void mouseEntered(MouseEvent me){
+            
         }
         public void mouseExited(MouseEvent me){
         }

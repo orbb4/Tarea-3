@@ -16,8 +16,12 @@ public class PanelPrincipal extends JPanel{
             g.fillRect(rect[0], rect[1], rect[2], rect[3]);
             comprador.paint(g);
             Toolkit t = Toolkit.getDefaultToolkit(); 
-            Image i = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
-            g.drawImage(i, 520,160, 100, 80, this);  
+            Image cocaImage = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
+            Image spriteImage = new ImageIcon(this.getClass().getResource("sprite.jpg")).getImage();
+            Image fantaImage = new ImageIcon(this.getClass().getResource("fanta.jpg")).getImage();
+            g.drawImage(cocaImage, 520,160, 120, 80, this);  
+            g.drawImage(spriteImage, 520,260, 120, 80, this);
+            g.drawImage(fantaImage, 520,360, 120, 80, this);  
 
     }
 }
