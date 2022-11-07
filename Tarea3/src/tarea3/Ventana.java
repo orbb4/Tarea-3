@@ -3,8 +3,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
 
-<<<<<<< HEAD
-public class Ventana extends JFrame { 
+/*public class Ventana extends JFrame { 
     private final Color COLOR_PANEL = new Color(50, 50, 160);
     private final Color COLOR_DEPOSITO_COCACOLA = new Color(0, 128, 0);
     private Paneles panelCocacola = new Paneles(COLOR_DEPOSITO_COCACOLA, new int[] {500,300, 200, 100});
@@ -20,7 +19,7 @@ public class Ventana extends JFrame {
     this.add(panelCocacola);
     this.add(new Boton(":D", 250, 250, 40, 40));
     panelCocacola.add(new JButton("este"), BorderLayout.EAST);
-=======
+=======*/
 public class Ventana extends JFrame {
     Moneda moneda = new Moneda();
 
@@ -40,8 +39,7 @@ public class Ventana extends JFrame {
         this.setVisible(true); 
         this.setResizable(false);
 
-        this.add(new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador));
->>>>>>> beta
+        this.add(new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador));t
    } 
 }
 
