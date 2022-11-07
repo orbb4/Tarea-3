@@ -16,8 +16,8 @@ public class PanelPrincipal extends JPanel{
             Toolkit t = Toolkit.getDefaultToolkit(); 
             Image i = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
             g.drawImage(i, 520,160, 100, 80, this);  
+            g.setColor(color); 
             g.fillRect(rect[0], rect[1], rect[2], rect[3]);
-            g.setColor(color);     
             comprador.paint(g);
 
     }
