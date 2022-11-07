@@ -1,7 +1,12 @@
 package tarea3;
+import java.awt.*;
 public class Comprador{    
     private String tipoBebida = null;
     private int vuelto = 0;    
+    
+    private Polygon p;
+    private int x,y;
+    
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
         boolean bebidaComprada = false;
@@ -35,7 +40,19 @@ public class Comprador{
             } 
         }
         vuelto = vueltot;
+        
+        //relacionado al dibujo
+        this.x=x;
+        this.y=y;
+        p = new Polygon();
+        p.addPoint(x,y);
+        p.addPoint(x+120, y+50);
+        p.addPoint(x+40, y+150);
     }
+    public void paint(Graphics g){
+        g.setColor(Color.red);
+        if(p!=null)g.drawPolygon(p);
+    }  
 
     public int cuantoVuelto(){
         return vuelto;
