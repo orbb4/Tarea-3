@@ -26,26 +26,27 @@ public class Ventana extends JFrame {
         Botones();
 
         this.add(panelPrincipal);
-        //Botones();
 
    } 
    
     private void Botones(){
-        JButton boton1 = new JButton(); //en el constructor/argumento le podemos pasar texto entre comillas
+        JButton boton1 = new JButton(); 
         //this.setLayout(null); testing
         boton1.setBounds(655, 175, 50, 50);
-        boton1.setEnabled(true);// si está en false no se puede hacer click sobre el botón, es para habilitar o deshabilitar las funciones del botón
+        boton1.setEnabled(true);
+        boton1.setBackground(Color.MAGENTA);
         this.add(boton1);
         
-        JButton boton2 = new JButton(); //en el constructor/argumento le podemos pasar texto entre comillas
+        JButton boton2 = new JButton(); 
         boton2.setBounds(655, 275, 50, 50);
-        boton2.setEnabled(true);// si está en false no se puede hacer click sobre el botón, es para habilitar o deshabilitar las funciones del botón
+        boton2.setEnabled(true);
+        boton2.setBackground(Color.MAGENTA);
         this.add(boton2);
         
-        JButton boton3 = new JButton(); //en el constructor/argumento le podemos pasar texto entre comillas
+        JButton boton3 = new JButton(); 
         boton3.setBounds(655, 375, 50, 50);
-        boton3.setEnabled(true);// si está en false no se puede hacer click sobre el botón, es para habilitar o deshabilitar las funciones del botón
-        //boton3.setForeground(Color.GREEN);//se le asigna un color a la letra del botón
+        boton3.setEnabled(true);
+        boton3.setBackground(Color.MAGENTA);
         this.add(boton3);
         
         
