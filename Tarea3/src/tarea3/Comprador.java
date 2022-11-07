@@ -1,6 +1,9 @@
 package tarea3;
 import java.awt.*;
-public class Comprador{    
+import javax.swing.JButton;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+public class Comprador extends JButton{    
     private String tipoBebida = null;
     private int vuelto = 0;    
     
@@ -45,6 +48,8 @@ public class Comprador{
         this.x=x+1000;
         this.y=y+200;
         
+        //Relacionado con eventos
+        this.addMouseListener(new EscuchaRaton());
     }
     public void paint(Graphics g){
         g.setColor(Color.ORANGE);
@@ -59,4 +64,14 @@ public class Comprador{
     public String queBebiste(){
         return tipoBebida;
     }
+    private class EscuchaRaton implements MouseListener {
+     public void mouseClicked(MouseEvent me) {;}
+         public void mousePressed(MouseEvent me) {
+              System.out.println("press");
+         }
+         public void mouseReleased(MouseEvent me) {;}
+         public void mouseEntered(MouseEvent me) {;}
+         public void mouseExited(MouseEvent me) {;}
+
+   }
 }

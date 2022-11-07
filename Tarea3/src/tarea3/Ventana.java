@@ -39,7 +39,12 @@ public class Ventana extends JFrame {
         this.setVisible(true); 
         this.setResizable(false);
 
+<<<<<<< HEAD
         this.add(new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador));t
+=======
+        this.add(new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador));
+        this.add(comprador);
+>>>>>>> beta
    } 
 }
 
