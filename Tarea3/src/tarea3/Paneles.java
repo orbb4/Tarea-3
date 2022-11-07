@@ -14,5 +14,5 @@ public class Paneles extends JPanel{
             g.setColor(color);
             g.fillRect(rect[0], rect[1], rect[2], rect[3]);
     }
-
+        
 }
