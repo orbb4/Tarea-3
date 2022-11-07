@@ -10,6 +10,9 @@ public class Comprador extends JButton{
     private Polygon p;
     private int x=0,y=0;
     
+    private Color cUp = new Color(216   ,145,1);
+    private Color cDown = new Color(216   ,145,1);
+    
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
         boolean bebidaComprada = false;
@@ -52,8 +55,10 @@ public class Comprador extends JButton{
         this.addMouseListener(new EscuchaRaton());
     }
     public void paint(Graphics g){
-        g.setColor(Color.ORANGE);
+        g.setColor(cUp);
         g.fillOval(x, y, 100, 100);
+        
+        g.setColor(cDown);
         g.fillRect(x, y+100, 100, 400);
 
     }  
@@ -65,18 +70,25 @@ public class Comprador extends JButton{
         return tipoBebida;
     }
     private class EscuchaRaton implements MouseListener {
-     public void mouseClicked(MouseEvent me) {;}
-         public void mousePressed(MouseEvent me) {
-              if(me.getY() <= y+100){
-                  System.out.println("arriba");
-              }
-              if(me.getY() > y+100){
-                  System.out.println("abajo");
-              }
-         }
-         public void mouseReleased(MouseEvent me) {;}
-         public void mouseEntered(MouseEvent me) {;}
-         public void mouseExited(MouseEvent me) {;}
+        public void mouseClicked(MouseEvent me) {;}
+        public void mousePressed(MouseEvent me) {
+            if(me.getY() <= y+100){
+                System.out.println("arriba");
+                cUp = new Color(255, 171, 0);
+            }
+            if(me.getY() > y+100){
+                System.out.println("abajo");
+                cDown = new Color(255, 171, 0);
+            }
+        } 
+        public void mouseReleased(MouseEvent me){
+            cUp = new Color(216,145,1);
+            cDown = new Color(216,145,1);
+        }
+        public void mouseEntered(MouseEvent me){
+        }
+        public void mouseExited(MouseEvent me){
+        }
 
    }
 }
