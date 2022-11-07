@@ -44,14 +44,12 @@ public class Comprador{
         //relacionado al dibujo
         this.x=x+500;
         this.y=y+500;
-        p = new Polygon();
-        p.addPoint(x,y);
-        p.addPoint(x+120, y+50);
-        p.addPoint(x-120, y+50);
+        
     }
     public void paint(Graphics g){
-        g.setColor(Color.red);
-        if(p!=null)g.drawPolygon(p);
+        g.setColor(Color.ORANGE);
+        g.fillOval(x, y, 100, 100);
+
     }  
 
     public int cuantoVuelto(){
