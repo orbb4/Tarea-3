@@ -2,7 +2,10 @@ package tarea3;
 import java.awt.*;
 import javax.swing.*;
 
-public class Ventana extends JFrame { 
+public class Ventana extends JFrame {
+    Moneda moneda = new Moneda();
+    Expendedor expendedor = new Expendedor(3, 100);
+    Comprador comprador = new Comprador(moneda, 2, expendedor);
     private final Color COLOR_PANEL = new Color(50, 50, 160);
     public Ventana(){
     super();
