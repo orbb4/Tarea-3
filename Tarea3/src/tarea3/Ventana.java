@@ -6,8 +6,9 @@ import javax.swing.ImageIcon;
 public class Ventana extends JFrame {
     Moneda moneda = new Moneda();
 
-    Expendedor expendedor = new Expendedor(3, 100);
+    Expendedor expendedor = new Expendedor(10, 100);
     Comprador comprador = new Comprador(moneda, 2, expendedor);
+    //public Expendedor(int nBebidas, int precio){
     
     private final Color COLOR_PANEL = new Color(50, 50, 160);
     private PanelPrincipal panelPrincipal;
@@ -19,17 +20,14 @@ public class Ventana extends JFrame {
         this.setSize(1366, 700); 
         this.setVisible(true); 
         this.setResizable(false);
-        panelPrincipal = new PanelPrincipal(COLOR_PANEL, new int[] {120, 50, 600, 900}, comprador);     
+        panelPrincipal = new PanelPrincipal(comprador, expendedor);     
         panelPrincipal.setBounds(0, 0, 1366, 700);
         this.add(panelPrincipal);
         
         Botones();
         this.add(comprador);
         this.add(panelPrincipal);
-<<<<<<< HEAD
-        //Botones();
-=======
->>>>>>> a9374080f18378faaa9449b9da1b3b1bf5313b68
+
    } 
    
     private void Botones(){

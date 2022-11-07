@@ -1,7 +1,6 @@
 package tarea3;
+import java.awt.*;
 import java.util.ArrayList;
-
-
 class Deposito{
     private ArrayList<Bebida> bebidas;
     public Deposito(){
@@ -21,6 +20,13 @@ class Deposito{
     public ArrayList<Bebida> getArrayBebidas(){
         return bebidas;
     }
+    public void paint(Graphics g){
+        /* ToDo: pintar cada bebida restante en deposito
+        g.setColor(new Color(80, 140, 145));
+        g.fillRect(150, 100, 300, 500);*/
+    }
+    // coordenadas y tamaño expendedor: 120, 50, 600, 900
+    
 }
 
 class DepositoVuelto{
@@ -39,7 +45,6 @@ class DepositoVuelto{
             return monedas.remove(0);
         }else{
             return null;
-        }
-       
+        }      
     }
 }

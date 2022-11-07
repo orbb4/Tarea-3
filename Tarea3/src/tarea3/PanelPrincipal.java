@@ -5,16 +5,16 @@ public class PanelPrincipal extends JPanel{
         private Color color;
         private int[] rect; // dimensiones del rectangulo (x, y, ancho, alto)
         private Comprador comprador;
-        public PanelPrincipal(Color color, int[] rect, Comprador com){
+        private Expendedor exp;
+        public PanelPrincipal(Comprador com, Expendedor exp){
             //this.setLayout(null); testing
             comprador = com;
-            this.setBackground(this.color); //se le asigna un color al panel
-            this.rect = rect;
+            this.exp = exp;
         }
         public void paint(Graphics g){
             super.paint(g);       
-            g.fillRect(rect[0], rect[1], rect[2], rect[3]);
             comprador.paint(g);
+            exp.paint(g);
             Toolkit t = Toolkit.getDefaultToolkit(); 
             Image cocaImage = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
             Image spriteImage = new ImageIcon(this.getClass().getResource("sprite.jpg")).getImage();
