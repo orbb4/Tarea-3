@@ -2,7 +2,8 @@ package tarea3;
 import java.awt.*;
 import javax.swing.*;
 
-public class Ventana extends JFrame {
+public class Ventana extends JFrame { 
+
     public Ventana(){
     super();
     this.setLayout(new BorderLayout());
@@ -13,5 +14,6 @@ public class Ventana extends JFrame {
     this.setResizable(false);
    } 
 }
+
 
 
