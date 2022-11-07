@@ -9,8 +9,8 @@ public class Ventana extends JFrame {
     Expendedor expendedor = new Expendedor(3, 100);
     Comprador comprador = new Comprador(moneda, 2, expendedor);
     
-    final Color COLOR_PANEL = new Color(50, 50, 160);
-    //Paneles expPanel = new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador);
+    private final Color COLOR_PANEL = new Color(50, 50, 160);
+    private PanelPrincipal panelPrincipal;
     
     public Ventana(){
         super();
@@ -18,11 +18,11 @@ public class Ventana extends JFrame {
         this.setLayout(new BorderLayout());
         this.setTitle("Expendedor");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
-        this.setSize(800, 700); 
+        this.setSize(1366, 700); 
         this.setVisible(true); 
         this.setResizable(false);
-
-        this.add(new Paneles(COLOR_PANEL, new int[] {120, 100, 600, 900}, comprador));
+        panelPrincipal = new PanelPrincipal(COLOR_PANEL, new int[] {120, 50, 600, 900}, comprador);
+        this.add(panelPrincipal);
    } 
 }
 
