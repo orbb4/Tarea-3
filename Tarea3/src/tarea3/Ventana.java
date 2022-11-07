@@ -1,4 +1,9 @@
 package tarea3;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 3d2655a8b997aef8babd4d064dab8a0130ec9f36
 import java.awt.*;
 import javax.swing.*;
 
@@ -13,3 +18,5 @@ public class Ventana extends JFrame {
     this.setResizable(false);
    } 
 }
+
+
