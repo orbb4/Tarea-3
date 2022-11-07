@@ -72,11 +72,11 @@ public class Comprador extends JButton{
     private class EscuchaRaton implements MouseListener {
         public void mouseClicked(MouseEvent me) {;}
         public void mousePressed(MouseEvent me) {
-            if(me.getY() <= y+100){
+            if(me.getY() <= y+100 && me.getX() > x && me.getX() < x+100){
                 System.out.println("arriba");
                 cUp = new Color(255, 171, 0);
             }
-            if(me.getY() > y+100){
+            if(me.getY() > y+100 && me.getX() > x && me.getX() < x+100){
                 System.out.println("abajo");
                 cDown = new Color(255, 171, 0);
             }
