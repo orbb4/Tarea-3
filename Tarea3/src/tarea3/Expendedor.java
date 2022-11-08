@@ -95,15 +95,27 @@ public class Expendedor{
             mousePresionado = false;
         }
     }
-    public void mouseMoved(MouseEvent e){
-        // si hay colision con expendedor
-        System.out.println("ola");
-        if (( e.getX() >= expRect.getMinX() && e.getX() <= expRect.getMaxX())&&( e.getY() >= expRect.getMinY() && e.getY() <= expRect.getMaxY()) && mousePresionado){
-            System.out.println("colision");
-            if(depCocaCola.getArrayBebidas().isEmpty()){
-                depCocaCola.addBebida(new CocaCola(123));
-            }
-        }  
-    
+    public Rectangle getExpRect(){
+        return expRect;
     }
+    //ToDo: cambiar numeros de serie en vez de que todas las bebidas tengan el mismo
+    public void llenarDepositosVacios(){
+        if(depCocaCola.getArrayBebidas().isEmpty()){
+            System.out.println("depCocaCola vacio");
+            for(int i = 0; i < 12; i++){
+                depCocaCola.addBebida(new CocaCola(1));
+            }
+        }
+        if(depFanta.getArrayBebidas().isEmpty()){
+            for(int i = 0; i < 12; i++){
+                depFanta.addBebida(new Fanta(1));
+            }
+        }
+        if(depSprite.getArrayBebidas().isEmpty()){
+            for(int i = 0; i < 12; i++){
+                depSprite.addBebida(new Sprite(1));
+            }
+        }
+    }
+
 }

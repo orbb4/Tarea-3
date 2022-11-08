@@ -13,6 +13,8 @@ public class PanelPrincipal extends JPanel{
             comprador = com;
             this.exp = exp;
             this.addMouseListener(new EscuchaRaton());
+           
+            
         }
         public void paint(Graphics g){
             super.paint(g);       
@@ -28,6 +30,7 @@ public class PanelPrincipal extends JPanel{
 
         }
         private class EscuchaRaton  implements MouseListener {
+            
             public void mouseClicked(MouseEvent me){
                 if(me.getX() > 1188 && me.getX() < 1288 && me.getY() > 100 && me.getY() < 200){
                     System.out.println("100");
@@ -38,7 +41,14 @@ public class PanelPrincipal extends JPanel{
                 if(me.getX() > 1188 && me.getX() < 1288 && me.getY() > 500 && me.getY() < 600){
                     System.out.println("1000");
                 }
+                if((me.getX() >= exp.getExpRect().getMinX() && me.getX() <= exp.getExpRect().getMaxX())&&( me.getY() >= exp.getExpRect().getMinY() && me.getY() <= exp.getExpRect().getMaxY())){
+                    System.out.println("colision");
+                    exp.llenarDepositosVacios();
+                    PanelPrincipal.this.repaint();
+                    
+                }  
             }
+            
             public void mousePressed(MouseEvent me) {
                 System.out.println(me.getY());
             }
