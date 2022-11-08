@@ -29,7 +29,6 @@ public class Ventana extends JFrame {
         JButton boton = new Botones( "Boton" );
         boton.setBackground( Color.red );
         this.getContentPane().add(boton);
-
           
         Botones(expendedor);
         this.add(panelPrincipal);      
