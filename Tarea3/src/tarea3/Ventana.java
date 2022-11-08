@@ -2,6 +2,8 @@ package tarea3;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseMotionListener;
 import javax.swing.*;
 
 public class Ventana extends JFrame {
@@ -9,7 +11,6 @@ public class Ventana extends JFrame {
 
     private Expendedor expendedor = new Expendedor(12, 100);
     private Comprador comprador = new Comprador(moneda, 2, expendedor);
-    //public Expendedor(int nBebidas, int precio){
     
     private final Color COLOR_PANEL = new Color(50, 50, 160);
     private PanelPrincipal panelPrincipal;
