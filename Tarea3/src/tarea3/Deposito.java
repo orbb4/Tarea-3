@@ -1,4 +1,6 @@
 package tarea3;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.*;
 import java.util.ArrayList;
 class Deposito{
@@ -23,6 +25,11 @@ class Deposito{
     public ArrayList<Bebida> getArrayBebidas(){
         return bebidas;
     }
+     
+    public void paint(Graphics g){
+        
+    }   
+
     // tipo bebida: 0=cocacola, 1=sprite, 2=fanta
     public void paint(Graphics g, int tipoBebida){
         int y = 560;

@@ -24,6 +24,13 @@ public class Ventana extends JFrame {
         this.setResizable(false);
         panelPrincipal = new PanelPrincipal(comprador, expendedor);     
         panelPrincipal.setBounds(0, 0, 1366, 700);
+        this.add(panelPrincipal);
+
+        this.add(panelPrincipal);
+        JButton boton = new Botones( "Boton" );
+        boton.setBackground( Color.red );
+        this.getContentPane().add(boton);
+
           
         Botones(expendedor);
         this.add(panelPrincipal);      
