@@ -2,15 +2,17 @@ package tarea3;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Expendedor {
+public class Expendedor{
     private DepositoVuelto depositoVuelto;
     private int precio;
     private Deposito depCocaCola = new Deposito();
     private Deposito depSprite = new Deposito();
     private Deposito depFanta = new Deposito();
     private Rectangle expRect = new Rectangle(120, 50, 600, 900);
+    private boolean mousePresionado;
     public Expendedor(int nBebidas, int precio){
         depositoVuelto = new DepositoVuelto();
         this.precio = precio;
@@ -84,7 +86,22 @@ public class Expendedor {
         depFanta.paint(g, 2);
         
     }
+    public void mousePressed(MouseEvent e){
+        if (e.getButton() == MouseEvent.BUTTON1) {
+            mousePresionado = true;
+        }else{
+            mousePresionado = false;
+        }
+    }
     public void mouseMoved(MouseEvent e){
-        
+        // si hay colision con expendedor
+        System.out.println("ola");
+        if (( e.getX() >= expRect.getMinX() && e.getX() <= expRect.getMaxX())&&( e.getY() >= expRect.getMinY() && e.getY() <= expRect.getMaxY()) && mousePresionado){
+            System.out.println("colision");
+            if(depCocaCola.getArrayBebidas().isEmpty()){
+                depCocaCola.addBebida(new CocaCola(123));
+            }
+        }  
+    
     }
 }
