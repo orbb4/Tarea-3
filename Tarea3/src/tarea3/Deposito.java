@@ -1,10 +1,7 @@
 package tarea3;
-<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Graphics;
-=======
 import java.awt.*;
->>>>>>> beta
 import java.util.ArrayList;
 class Deposito{
     private ArrayList<Bebida> bebidas;
@@ -28,12 +25,11 @@ class Deposito{
     public ArrayList<Bebida> getArrayBebidas(){
         return bebidas;
     }
-<<<<<<< HEAD
      
     public void paint(Graphics g){
         
     }   
-=======
+
     // tipo bebida: 0=cocacola, 1=sprite, 2=fanta
     public void paint(Graphics g, int tipoBebida){
         int y = 560;
@@ -68,7 +64,6 @@ class Deposito{
     // cristal: g.fillRect(150, 100, 300, 500);
     // coordenadas y tamaño expendedor: 120, 50, 600, 900
     
->>>>>>> beta
 }
 
 class DepositoVuelto{
