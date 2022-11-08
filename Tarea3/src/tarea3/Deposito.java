@@ -67,6 +67,7 @@ class Deposito{
 }
 
 class DepositoVuelto{
+    private final Color GRIS = new Color(128, 128, 128);
     private ArrayList<Moneda> monedas;
     public DepositoVuelto(){
         monedas = new ArrayList();
@@ -83,5 +84,10 @@ class DepositoVuelto{
         }else{
             return null;
         }      
+    }
+    
+    public void paint(Graphics g){
+        g.setColor(GRIS);
+        g.fillRect(515, 500, 185, 150);
     }
 }
