@@ -1,4 +1,8 @@
 package tarea3;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Expendedor {
     private DepositoVuelto depositoVuelto;
     private int precio;
@@ -64,5 +68,18 @@ public class Expendedor {
     }
     public DepositoVuelto getDepositoVuelto(){
         return depositoVuelto;
+    }
+    //COLOR_PANEL, new int[] {120, 50, 600, 900}
+    public void paint(Graphics g){
+        // exterior expendedor 
+        g.setColor(new Color(30, 40, 40));
+        g.fillRect(120, 50, 600, 900);
+        // cristal del deposito de bebidas
+        g.setColor(new Color(80, 140, 145));
+        g.fillRect(150, 100, 300, 500);
+        depCocaCola.paint(g, 0);
+        depSprite.paint(g, 1);
+        depFanta.paint(g, 2);
+        
     }
 }
