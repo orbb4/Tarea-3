@@ -57,22 +57,22 @@ public class Comprador{
         g.fillRect(x, y+100, 100, 400);
 
         g.setColor(Color.LIGHT_GRAY);
-        g.fillRect(1100, 0, 366,700);
+        g.fillRect(1200, 0, 150,700);
         
-        g.setColor(Color.YELLOW);
+        /*g.setColor(Color.YELLOW);
         g.fillOval(1188, 100, 100, 100);
         g.setColor(Color.ORANGE);
         g.fillOval(1188, 300, 100, 100);
         g.setColor(Color.RED);
-        g.fillOval(1188, 500, 100, 100);
+        g.fillOval(1188, 500, 100, 100);*/
         
         //REFERENCIAS
         g.setColor(Color.YELLOW);
-        g.fillOval(100, 10, 20, 25);
+        g.fillRect(110, 10, 25, 25);
         g.setColor(Color.ORANGE);
-        g.fillOval(500, 10, 20, 25);
+        g.fillRect(510, 10, 25, 25);
         g.setColor(Color.RED);
-        g.fillOval(900, 10, 20, 25);
+        g.fillRect(910, 10, 25, 25);
         
         g.setColor(Color.BLACK);
         g.drawString("100 = ", 70, 30);

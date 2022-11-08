@@ -84,6 +84,8 @@ public class Expendedor{
         depCocaCola.paint(g, 0);
         depSprite.paint(g, 1);
         depFanta.paint(g, 2);
+        depositoVuelto.paint(g);
+        
         
     }
     public void mousePressed(MouseEvent e){

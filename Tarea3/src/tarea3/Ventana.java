@@ -21,6 +21,10 @@ public class Ventana extends JFrame {
         this.setTitle("Expendedor");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
         this.setSize(1366, 700); 
+        
+        /*this.setLocationRelativeTo(null);
+        this.setMinimumSize(new Dimension(200,200));*/
+
         this.setVisible(true); 
         this.setResizable(false);
         this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
@@ -29,7 +33,6 @@ public class Ventana extends JFrame {
         this.add(panelPrincipal);
 
         this.add(panelPrincipal);
-
           
         Botones();
         this.add(panelPrincipal);      
@@ -57,6 +60,28 @@ public class Ventana extends JFrame {
         boton3.setEnabled(true);
         boton3.setBackground(Color.MAGENTA);
         this.add(boton3);
+        
+        JButton boton4 = new JButton(); 
+        //this.setLayout(null); testing
+        boton4.setBounds(1225, 100, 100, 100);
+        boton4.setEnabled(true);
+        boton4.setBackground(Color.YELLOW);
+        this.add(boton4);
+        
+        JButton boton5 = new JButton(); 
+        //this.setLayout(null); testing
+        boton5.setBounds(1225, 300, 100, 100);
+        boton5.setEnabled(true);
+        boton5.setBackground(Color.RED);
+        this.add(boton5);
+        
+        JButton boton6 = new JButton(); 
+        //this.setLayout(null); testing
+        boton6.setBounds(1225, 500, 100, 100);
+        boton6.setEnabled(true);
+        boton6.setBackground(Color.ORANGE);
+        this.add(boton6);
+        
         
         // boton 1
         boton1.addActionListener(new ActionListener(){

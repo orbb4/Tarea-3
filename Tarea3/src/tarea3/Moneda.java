@@ -1,4 +1,4 @@
-package tarea3;
+ package tarea3;
 
 class Moneda{
     /*private String serie;
