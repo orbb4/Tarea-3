@@ -26,36 +26,32 @@ class Deposito{
     // tipo bebida: 0=cocacola, 1=sprite, 2=fanta
     public void paint(Graphics g, int tipoBebida){
         int y = 560;
+        int x;
+        // comprobamos tipo de bebida para posicionarlas en su columna correspondiente
         switch (tipoBebida) {
-            
+            // cocacola
             case 0:
                 g.setColor(ROJO);
-                for(int i = 0; i < bebidas.size(); i++){
-                    
-                    g.fillRect(150, y, 80, 40);
-                    y-= 40 + 2;
-                }             
-                
+                x =150;               
                 break;
+            // sprite
             case 1:
                 g.setColor(VERDE);
-                for(int i = 0; i < bebidas.size(); i++){
-                    
-                    g.fillRect(260, y, 80, 40);
-                    y-= 40 +2;
-                }
+                x = 260;
                 break;
+            // fanta
             case 2:
                 g.setColor(NARANJO);
-                for(int i = 0; i < bebidas.size(); i++){
-                    
-                    g.fillRect(370, y, 80, 40);
-                    y-= 40 +2;
-                }                 
+                x=370;          
                break;
             default:
+                x = 150;
                 break;
         }
+        for(int i = 0; i < bebidas.size(); i++){                   
+            g.fillRect(x, y, 80, 40);
+            y-= 40 + 2;
+        }      
         
     }
     // cristal: g.fillRect(150, 100, 300, 500);

@@ -1,13 +1,17 @@
 package tarea3;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.ImageIcon;
 
 public class Ventana extends JFrame {
-    Moneda moneda = new Moneda();
+    private Moneda moneda = new Moneda();
 
-    Expendedor expendedor = new Expendedor(5, 100);
-    Comprador comprador = new Comprador(moneda, 2, expendedor);
+    private Expendedor expendedor = new Expendedor(5, 100);
+    private Comprador comprador = new Comprador(moneda, 2, expendedor);
     //public Expendedor(int nBebidas, int precio){
     
     private final Color COLOR_PANEL = new Color(50, 50, 160);
@@ -22,21 +26,21 @@ public class Ventana extends JFrame {
         this.setResizable(false);
         panelPrincipal = new PanelPrincipal(comprador, expendedor);     
         panelPrincipal.setBounds(0, 0, 1366, 700);
-        this.add(panelPrincipal);
-        
-        Botones();
-
-        this.add(panelPrincipal);
-
+          
+        Botones(expendedor);
+        this.add(panelPrincipal);      
    } 
    
-    private void Botones(){
+    
+    private void Botones(Expendedor expendedor){
         JButton boton1 = new JButton(); 
         //this.setLayout(null); testing
         boton1.setBounds(655, 175, 50, 50);
         boton1.setEnabled(true);
         boton1.setBackground(Color.MAGENTA);
         this.add(boton1);
+        
+        
         
         JButton boton2 = new JButton(); 
         boton2.setBounds(655, 275, 50, 50);
@@ -50,9 +54,72 @@ public class Ventana extends JFrame {
         boton3.setBackground(Color.MAGENTA);
         this.add(boton3);
         
-        
-    }
+        // boton 1
+        boton1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                try {
+                    expendedor.comprarBebida(new Moneda1000(), 0);
+                    // pintamos los botones para el siguiente frame
+                    SwingUtilities.windowForComponent(boton1).repaint();
+                    // repintamos panel principal para el siguiente frame
+                    panelPrincipal.repaint();
+                } catch (NoHayBebidaException ex) {
+                    System.out.println(ex);
+                    System.out.println("No quedan bebidas!");
+                } catch (PagoIncorrectoException ex) {
+                    System.out.println(ex);
+                    System.out.println("No se puede obtener bebida ya que no hay pago");
+                } catch (PagoInsuficienteException ex) {
+                    System.out.println(ex);
+                    System.out.println("No se puede obtener bebida ya que el pago es insuficiente");
+                }
+            }
+        });
+        // boton 2
+        boton2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                try {
+                    expendedor.comprarBebida(new Moneda1000(), 1);
+                    // pintamos los botones para el siguiente frame
+                    SwingUtilities.windowForComponent(boton1).repaint();
+                    // repintamos panel principal para el siguiente frame
+                    panelPrincipal.repaint();
+                } catch (NoHayBebidaException ex) {
+                    System.out.println(ex);
+                    System.out.println("No quedan bebidas!");
+                } catch (PagoIncorrectoException ex) {
+                    System.out.println(ex);
+                    System.out.println("No se puede obtener bebida ya que no hay pago");
+                } catch (PagoInsuficienteException ex) {
+                    System.out.println(ex);
+                    System.out.println("No se puede obtener bebida ya que el pago es insuficiente");
+                }
+            }
+        });
+        // boton 3
+        boton3.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                try {
+                    expendedor.comprarBebida(new Moneda1000(), 2);
+                    // pintamos los botones para el siguiente frame
+                    SwingUtilities.windowForComponent(boton1).repaint();
+                    // repintamos panel principal para el siguiente frame
+                    panelPrincipal.repaint();
+                } catch (NoHayBebidaException ex) {
+                    System.out.println(ex);
+                    System.out.println("No quedan bebidas!");
+                } catch (PagoIncorrectoException ex) {
+                    System.out.println(ex);
+                    System.out.println("No se puede obtener bebida ya que no hay pago");
+                } catch (PagoInsuficienteException ex) {
+                    System.out.println(ex);
+                    System.out.println("No se puede obtener bebida ya que el pago es insuficiente");
+                }
+            }
+        });        
+    }        
 }
+
 
 
 
