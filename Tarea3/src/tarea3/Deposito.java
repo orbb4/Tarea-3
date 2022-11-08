@@ -50,7 +50,7 @@ class Deposito{
         }
         for(int i = 0; i < bebidas.size(); i++){                   
             g.fillRect(x, y, 80, 40);
-            y-= 40 + 2;
+            y-= 40 + 1;
         }      
         
     }

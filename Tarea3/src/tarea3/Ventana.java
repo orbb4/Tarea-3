@@ -2,15 +2,12 @@ package tarea3;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
-import javax.swing.ImageIcon;
 
 public class Ventana extends JFrame {
     private Moneda moneda = new Moneda();
 
-    private Expendedor expendedor = new Expendedor(5, 100);
+    private Expendedor expendedor = new Expendedor(12, 100);
     private Comprador comprador = new Comprador(moneda, 2, expendedor);
     //public Expendedor(int nBebidas, int precio){
     

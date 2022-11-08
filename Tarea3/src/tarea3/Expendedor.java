@@ -1,7 +1,8 @@
 package tarea3;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 
 public class Expendedor {
     private DepositoVuelto depositoVuelto;
@@ -9,6 +10,7 @@ public class Expendedor {
     private Deposito depCocaCola = new Deposito();
     private Deposito depSprite = new Deposito();
     private Deposito depFanta = new Deposito();
+    private Rectangle expRect = new Rectangle(120, 50, 600, 900);
     public Expendedor(int nBebidas, int precio){
         depositoVuelto = new DepositoVuelto();
         this.precio = precio;
@@ -78,6 +80,9 @@ public class Expendedor {
         depCocaCola.paint(g, 0);
         depSprite.paint(g, 1);
         depFanta.paint(g, 2);
+        
+    }
+    public void mouseMoved(MouseEvent e){
         
     }
 }
