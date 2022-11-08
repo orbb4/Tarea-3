@@ -22,6 +22,7 @@ public class Ventana extends JFrame {
         this.setSize(1366, 700); 
         this.setVisible(true); 
         this.setResizable(false);
+        this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         panelPrincipal = new PanelPrincipal(comprador, expendedor);     
         panelPrincipal.setBounds(0, 0, 1366, 700);
         this.add(panelPrincipal);

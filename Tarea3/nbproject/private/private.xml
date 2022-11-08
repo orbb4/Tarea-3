@@ -3,23 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Boton.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Bebida.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/PanelPrincipal.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/NoHayBebidaException.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Ventana.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Comprador.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/PagoInsuficienteException.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Expendedor.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Deposito.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Tarea3.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Moneda.java</file>
-            <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Botones.java</file>
-=======
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/Ventana.java</file>
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/Moneda.java</file>
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/PagoIncorrectoException.java</file>
+            <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/Bebida.java</file>
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/Deposito.java</file>
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/Expendedor.java</file>
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/Tarea3.java</file>
@@ -28,7 +15,6 @@
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/Comprador.java</file>
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/cocacola.jpg</file>
             <file>file:/C:/Users/renat/Desktop/t3/Tarea-3/Tarea3/src/tarea3/NoHayBebidaException.java</file>
->>>>>>> beta
         </group>
     </open-files>
 </project-private>
