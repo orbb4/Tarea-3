@@ -39,26 +39,48 @@ class Deposito{
             // cocacola
             case 0:
                 g.setColor(ROJO);
-                x =150;               
+                x =150;
+                for(int i = 0; i < bebidas.size(); i++){
+                    if(bebidas.get(i).getSabor() == "CocaCola"){
+                        bebidas.get(i).setXY(150, y);
+                        bebidas.get(i).paint(g);
+                    }
+                    else{continue;}
+                    y-= 40 + 1;
+                }      
                 break;
             // sprite
             case 1:
                 g.setColor(VERDE);
+                y = 560;
                 x = 260;
+                for(int i = 0; i < bebidas.size(); i++){
+                    if(bebidas.get(i).getSabor() == "Sprite"){
+                        bebidas.get(i).setXY(x, y);
+                        bebidas.get(i).paint(g);
+                    }
+                    else{continue;}
+                    y-= 40 + 1;
+                }   
                 break;
             // fanta
             case 2:
                 g.setColor(NARANJO);
-                x=370;          
+                y=560;
+                x=370;
+                for(int i = 0; i < bebidas.size(); i++){
+                    if(bebidas.get(i).getSabor() == "Fanta"){
+                        bebidas.get(i).setXY(x, y);
+                        bebidas.get(i).paint(g);
+                    }
+                    else{continue;}
+                    y-= 40 + 1;
+                }   
                break;
             default:
                 x = 150;
                 break;
-        }
-        for(int i = 0; i < bebidas.size(); i++){                   
-            g.fillRect(x, y, 80, 40);
-            y-= 40 + 1;
-        }      
+        }  
         
     }
     // cristal: g.fillRect(150, 100, 300, 500);

@@ -16,7 +16,8 @@ public class Comprador{
         int vueltot;
         boolean bebidaComprada = false;
         try { 
-            Bebida bebida = e.comprarBebida(m, b);
+            e.comprarBebida(m, b);
+            Bebida bebida = e.getBebida();
             bebidaComprada = true;
         } catch (NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex) {
             System.out.println(ex);
