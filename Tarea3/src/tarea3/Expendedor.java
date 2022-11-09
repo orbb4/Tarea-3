@@ -17,16 +17,16 @@ public class Expendedor{
     public Expendedor(int nBebidas, int precio){
         depositoVuelto = new DepositoVuelto();
         this.precio = precio;
-        for(int i=0, u=100; i<nBebidas; ++i, u++){
-            CocaCola bebCoca = new CocaCola(u);
+        for(int i=0; i<nBebidas; ++i, Bebida.cocaGlobal++){
+            CocaCola bebCoca = new CocaCola(Bebida.cocaGlobal);
             depCocaCola.addBebida(bebCoca);
         }
-        for(int i=0, u=200; i<nBebidas; ++i, u++){
-            Sprite bebSprite = new Sprite(u);
+        for(int i=0; i<nBebidas; ++i, Bebida.spriteGlobal++){
+            Sprite bebSprite = new Sprite(Bebida.spriteGlobal);
             depSprite.addBebida(bebSprite);
         }
-        for(int i=0, u=300; i<nBebidas; ++i, u++){
-            Fanta bebFanta = new Fanta(u);
+        for(int i=0; i<nBebidas; ++i, Bebida.fantaGlobal++){
+            Fanta bebFanta = new Fanta(Bebida.fantaGlobal);
             depFanta.addBebida(bebFanta);
         }
                
@@ -109,18 +109,18 @@ public class Expendedor{
     public void llenarDepositosVacios(){
         if(depCocaCola.getArrayBebidas().isEmpty()){
             System.out.println("depCocaCola vacio");
-            for(int i = 0; i < 12; i++){
-                depCocaCola.addBebida(new CocaCola(1));
+            for(int i = 0; i < 12; i++, ++Bebida.cocaGlobal){
+                depCocaCola.addBebida(new CocaCola(Bebida.cocaGlobal));
             }
         }
         if(depFanta.getArrayBebidas().isEmpty()){
-            for(int i = 0; i < 12; i++){
-                depFanta.addBebida(new Fanta(1));
+            for(int i = 0; i < 12; i++, ++Bebida.fantaGlobal){
+                depFanta.addBebida(new Fanta(Bebida.fantaGlobal));
             }
         }
         if(depSprite.getArrayBebidas().isEmpty()){
-            for(int i = 0; i < 12; i++){
-                depSprite.addBebida(new Sprite(1));
+            for(int i = 0; i < 12; i++, ++Bebida.spriteGlobal){
+                depSprite.addBebida(new Sprite(Bebida.spriteGlobal));
             }
         }
     }

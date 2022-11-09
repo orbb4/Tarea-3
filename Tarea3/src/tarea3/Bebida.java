@@ -3,6 +3,9 @@ import java.awt.*;
 
 abstract class Bebida{
     private int serie;
+    static int cocaGlobal = 100;
+    static int spriteGlobal = 200;
+    static int fantaGlobal = 300;
     private int x,y;
     public Bebida(int serie){
         this.serie = serie;
