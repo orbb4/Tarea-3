@@ -50,7 +50,8 @@ public class PanelPrincipal extends JPanel{
             }
             
             public void mousePressed(MouseEvent me) {
-                System.out.println(me.getY());
+                System.out.println("Y: " + me.getY());
+                System.out.println("X: " + me.getX());
             }
             public void mouseReleased(MouseEvent me) {;}
             public void mouseEntered(MouseEvent me) {
