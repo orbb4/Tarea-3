@@ -98,6 +98,8 @@ public class PanelPrincipal extends JPanel{
                 boton1Xcord = 655;
                 boton2Xcord = 655;
                 boton3Xcord = 655;
+                System.out.println("Y: " + me.getY());
+                System.out.println("X: " + me.getX());
             }
             public void mouseEntered(MouseEvent me) {
             }  
