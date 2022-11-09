@@ -73,7 +73,6 @@ class Deposito{
                         bebidas.get(i).setXY(x, y);
                         bebidas.get(i).paint(g);
                     }
-                    else{continue;}
                     y-= 40 + 1;
                 }   
                break;
