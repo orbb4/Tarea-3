@@ -1,5 +1,8 @@
  package tarea3;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 class Moneda{
     /*private String serie;
     Moneda(String serie){
@@ -14,6 +17,7 @@ class Moneda{
     }
 }
 class Moneda100 extends Moneda{
+    private int y = 560, x;
     private static int numSerieContador = 0;
     private String numSerie;
     Moneda100(){
@@ -25,6 +29,11 @@ class Moneda100 extends Moneda{
     }
     public String getSerie(){
         return numSerie;
+    }
+    public void paint(Graphics g){              
+        g.setColor(Color.YELLOW);
+        g.fillOval(x, y, 80, 40);
+        y-= 40 + 1;
     }
 }
 class Moneda500 extends Moneda{

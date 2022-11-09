@@ -2,15 +2,16 @@
 package tarea3;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JButton;
 
 public class Boton extends JButton{
     private Color color;
-    //private int[] rect; 
-    public Boton(String Texto, int posx, int posy, int ancho, int alto){
-        this.setText(Texto);
-        this.setEnabled(true);
-        this.setForeground(this.color); //color del texto del botón
-        this.setBounds(posx, posy, ancho, alto);
+    public Boton(){
+
     }
+     public void paint(Graphics g, int x, int y, int ancho, int largo){
+        g.setColor(color);
+        g.fillOval(x, y, ancho, largo);
+    }   
 }
