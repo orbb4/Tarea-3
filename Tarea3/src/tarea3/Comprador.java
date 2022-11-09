@@ -3,7 +3,6 @@ import java.awt.*;
 public class Comprador{    
     private String tipoBebida = null;
     private int vuelto = 0;    
-    
     private Polygon p;
     private int x=0,y=0;
     
@@ -80,7 +79,9 @@ public class Comprador{
         g.drawString("1000 = ", 860, 30);
         
     }  
-
+    public void CompraBebida(){
+        
+    }
     public int cuantoVuelto(){
         return vuelto;
     }

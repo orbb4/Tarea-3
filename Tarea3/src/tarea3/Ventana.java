@@ -9,8 +9,8 @@ import javax.swing.*;
 
 public class Ventana extends JFrame {
     private Moneda moneda = new Moneda();
-
     private Expendedor expendedor = new Expendedor(12, 100);
+    // solo usado para dibujarlo en pantalla. No compra nada (moneda sin valor)
     private Comprador comprador = new Comprador(moneda, 2, expendedor);
     
     private final Color COLOR_PANEL = new Color(50, 50, 160);
@@ -34,7 +34,7 @@ public class Ventana extends JFrame {
 
         this.add(panelPrincipal);
           
-        Botones();
+        //Botones();
         this.add(panelPrincipal);      
    } 
    
@@ -87,6 +87,7 @@ public class Ventana extends JFrame {
         boton1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try {
+                    
                     expendedor.comprarBebida(new Moneda1000(), 0);
                     // pintamos los botones para el siguiente frame
                     SwingUtilities.windowForComponent(boton1).repaint();
