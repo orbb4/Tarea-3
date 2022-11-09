@@ -59,12 +59,15 @@ public class Expendedor{
         switch (cual) {
             case 0:
                 bebidaComprada = depCocaCola.getBebida();
+                break;
             case 1:
                 bebidaComprada = depSprite.getBebida();
+                break;
             case 2:
                 bebidaComprada = depFanta.getBebida();
+                break;
             default:
-                bebidaComprada = depCocaCola.getBebida();
+                break;
         }   
     }
     
