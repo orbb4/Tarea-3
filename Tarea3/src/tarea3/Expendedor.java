@@ -17,16 +17,16 @@ public class Expendedor{
     public Expendedor(int nBebidas, int precio){
         depositoVuelto = new DepositoVuelto();
         this.precio = precio;
-        CocaCola bebCoca = new CocaCola(32883);
-        for(int i=0; i<nBebidas; ++i){
+        for(int i=0, u=100; i<nBebidas; ++i, u++){
+            CocaCola bebCoca = new CocaCola(u);
             depCocaCola.addBebida(bebCoca);
         }
-        Sprite bebSprite = new Sprite(29798);
-        for(int i=0; i<nBebidas; ++i){
+        for(int i=0, u=200; i<nBebidas; ++i, u++){
+            Sprite bebSprite = new Sprite(u);
             depSprite.addBebida(bebSprite);
         }
-        Fanta bebFanta = new Fanta(39845);
-        for(int i=0; i<nBebidas; ++i){
+        for(int i=0, u=300; i<nBebidas; ++i, u++){
+            Fanta bebFanta = new Fanta(u);
             depFanta.addBebida(bebFanta);
         }
                
