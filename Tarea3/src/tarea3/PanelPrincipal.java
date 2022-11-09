@@ -80,7 +80,7 @@ public class PanelPrincipal extends JPanel{
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     Comprador  c = new Comprador(new Moneda1000(), 0, exp);
                 }
-                // colision boton 1: comprar CocaCola
+                // colision boton 2: comprar Sprite
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
                     System.out.println("boton2");
                     boton2Xcord = 658;
