@@ -29,5 +29,6 @@ public class Ventana extends JFrame {
         
         //Botones();
         this.add(panelPrincipal);      
-   } 
-}
+
+   }        
+}         
