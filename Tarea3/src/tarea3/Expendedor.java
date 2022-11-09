@@ -85,6 +85,9 @@ public class Expendedor{
         // cristal del deposito de bebidas
         g.setColor(new Color(80, 140, 145));
         g.fillRect(150, 100, 300, 500);
+        // deposito de monedas recibidas por comprarBebida
+        g.setColor(Color.GRAY);
+        g.fillRect(150, 620, 300, 60);
         depCocaCola.paint(g, 0);
         depSprite.paint(g, 1);
         depFanta.paint(g, 2);

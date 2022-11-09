@@ -53,6 +53,17 @@ public class PanelPrincipal extends JPanel{
             g.fillOval(boton1Xcord, 175, 50, 50);
             g.fillOval(boton2Xcord, 275, 50, 50);
             g.fillOval(boton3Xcord, 375, 50, 50);
+            // bolsillo de bebidas
+            g.setColor(new Color(85, 65, 55));
+            g.fillRect(740, 50, 150,700);
+            // bebidas en bolsillo del comprador:
+            for(CocaCola coca: comprador.getCocaColasBolsillo()){
+                System.out.println("here");
+                coca.setXY(40, 750);
+                //g.fillOval(750, 40, 40, 100);
+                coca.paint(g);
+            }
+
 
         }
         private class EscuchaRaton  implements MouseListener {
@@ -96,25 +107,30 @@ public class PanelPrincipal extends JPanel{
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
                     System.out.println("boton1");
                     boton1Xcord = 658;
-                    PanelPrincipal.this.repaint();
+
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     Comprador  c = new Comprador(new Moneda1000(), 0, exp);
+                    comprador.addBebida(0);
+                    System.out.println(comprador.getCocaColasBolsillo().toString());
+                    PanelPrincipal.this.repaint();
                 }
                 // colision boton 2: comprar Sprite
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
                     System.out.println("boton2");
                     boton2Xcord = 658;
-                    PanelPrincipal.this.repaint();
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     Comprador  c = new Comprador(new Moneda1000(), 1, exp);
+                    comprador.addBebida(1);
+                    PanelPrincipal.this.repaint();
                 }
                 // colision boton 3: comprar Fanta
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 375  && me.getY() <= 425){
                     System.out.println("boton3");                    
                     boton3Xcord = 658;
-                    PanelPrincipal.this.repaint();
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     Comprador  c = new Comprador(new Moneda1000(), 2, exp);
+                    comprador.addBebida(2);
+                    PanelPrincipal.this.repaint();
                 }
                 
             }
