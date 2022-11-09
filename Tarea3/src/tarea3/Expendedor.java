@@ -12,6 +12,7 @@ public class Expendedor{
     private Deposito depSprite = new Deposito();
     private Deposito depFanta = new Deposito();
     private Rectangle expRect = new Rectangle(120, 50, 600, 900);
+    private Bebida bebidaComprada;
     private boolean mousePresionado;
     public Expendedor(int nBebidas, int precio){
         depositoVuelto = new DepositoVuelto();
@@ -32,7 +33,7 @@ public class Expendedor{
     }
     
     
-    public Bebida comprarBebida(Moneda m, int cual) throws NoHayBebidaException, PagoIncorrectoException, PagoInsuficienteException{
+    public void comprarBebida(Moneda m, int cual) throws NoHayBebidaException, PagoIncorrectoException, PagoInsuficienteException{
         int vuelto;
         if(m == null){
             throw new PagoIncorrectoException("Valor de moneda no puede ser null");
@@ -57,13 +58,13 @@ public class Expendedor{
         }
         switch (cual) {
             case 0:
-                return depCocaCola.getBebida();
+                bebidaComprada = depCocaCola.getBebida();
             case 1:
-                return depSprite.getBebida();
+                bebidaComprada = depSprite.getBebida();
             case 2:
-                return depFanta.getBebida();
+                bebidaComprada = depFanta.getBebida();
             default:
-                return depCocaCola.getBebida();
+                bebidaComprada = depCocaCola.getBebida();
         }   
     }
     
@@ -97,6 +98,9 @@ public class Expendedor{
     }
     public Rectangle getExpRect(){
         return expRect;
+    }
+    public Bebida getBebida(){
+        return bebidaComprada;
     }
     //ToDo: cambiar numeros de serie en vez de que todas las bebidas tengan el mismo
     public void llenarDepositosVacios(){
