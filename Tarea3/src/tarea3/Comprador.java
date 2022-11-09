@@ -9,6 +9,8 @@ public class Comprador{
     
     private Color cUp = new Color(216   ,145,1);
     private Color cDown = new Color(216   ,145,1);
+    private final Color BLACK = new Color(0,0,0);
+
     
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
@@ -58,26 +60,29 @@ public class Comprador{
 
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(1200, 0, 150,700);
+
         
-        /*g.setColor(Color.YELLOW);
-        g.fillOval(1188, 100, 100, 100);
+        g.setColor(Color.YELLOW);
+        g.fillOval(1225, 100, 100, 100);
         g.setColor(Color.ORANGE);
-        g.fillOval(1188, 300, 100, 100);
+        g.fillOval(1225, 300, 100, 100);
         g.setColor(Color.RED);
-        g.fillOval(1188, 500, 100, 100);*/
+        g.fillOval(1225, 500, 100, 100);
         
         //REFERENCIAS
         g.setColor(Color.YELLOW);
-        g.fillRect(110, 10, 25, 25);
+        g.fillOval(110, 10, 25, 25);
         g.setColor(Color.ORANGE);
-        g.fillRect(510, 10, 25, 25);
+        g.fillOval(510, 10, 25, 25);
         g.setColor(Color.RED);
-        g.fillRect(910, 10, 25, 25);
+        g.fillOval(910, 10, 25, 25);
         
         g.setColor(Color.BLACK);
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
+        
+        
         
     }  
 

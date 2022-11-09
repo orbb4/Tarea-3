@@ -61,7 +61,7 @@ public class Ventana extends JFrame {
         boton3.setBackground(Color.MAGENTA);
         this.add(boton3);
         
-        JButton boton4 = new JButton(); 
+        /*JButton boton4 = new JButton(); 
         //this.setLayout(null); testing
         boton4.setBounds(1225, 100, 100, 100);
         boton4.setEnabled(true);
@@ -80,7 +80,7 @@ public class Ventana extends JFrame {
         boton6.setBounds(1225, 500, 100, 100);
         boton6.setEnabled(true);
         boton6.setBackground(Color.ORANGE);
-        this.add(boton6);
+        this.add(boton6);*/
         
         
         // boton 1
