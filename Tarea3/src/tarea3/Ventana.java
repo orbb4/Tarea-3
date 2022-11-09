@@ -8,10 +8,6 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.*;
 
 public class Ventana extends JFrame {
-    private Moneda moneda = new Moneda();
-    private Expendedor expendedor = new Expendedor(12, 100);
-    // solo usado para dibujarlo en pantalla. No compra nada (moneda sin valor)
-    private Comprador comprador = new Comprador(moneda, 2, expendedor);
     
     private final Color COLOR_PANEL = new Color(50, 50, 160);
     private PanelPrincipal panelPrincipal;
@@ -28,14 +24,12 @@ public class Ventana extends JFrame {
         this.setVisible(true); 
         this.setResizable(false);
         this.setExtendedState(this.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-        panelPrincipal = new PanelPrincipal(comprador, expendedor);     
+        panelPrincipal = new PanelPrincipal();     
         panelPrincipal.setBounds(0, 0, 1366, 700);
-        this.add(panelPrincipal);
-
-        this.add(panelPrincipal);
-          
+        
         //Botones();
         this.add(panelPrincipal);      
+<<<<<<< HEAD
    } 
    
 
@@ -148,6 +142,9 @@ public class Ventana extends JFrame {
             }
         });        
     }        
+=======
+   }         
+>>>>>>> f8624059c8470ea5713d605248d2d2af894706cd
 }
 
 
