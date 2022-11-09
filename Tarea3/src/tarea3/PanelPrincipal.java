@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 public class PanelPrincipal extends JPanel{
         private Color color;
+        private final Color VERDEMENTA = new Color(36, 211, 154);
         private int[] rect; // dimensiones del rectangulo (x, y, ancho, alto)
         private Comprador comprador;
         private Expendedor exp;
@@ -27,6 +28,9 @@ public class PanelPrincipal extends JPanel{
             g.drawImage(cocaImage, 520,160, 120, 80, this);  
             g.drawImage(spriteImage, 520,260, 120, 80, this);
             g.drawImage(fantaImage, 520,360, 120, 80, this);  
+            //bolsillo
+            g.setColor(VERDEMENTA);
+            g.fillRect(1050, 0, 150,700);
 
         }
         private class EscuchaRaton  implements MouseListener {

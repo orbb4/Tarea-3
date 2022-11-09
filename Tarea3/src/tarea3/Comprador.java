@@ -9,8 +9,6 @@ public class Comprador{
     
     private Color cUp = new Color(216   ,145,1);
     private Color cDown = new Color(216   ,145,1);
-    private final Color BLACK = new Color(0,0,0);
-
     
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
