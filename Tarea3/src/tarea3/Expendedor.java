@@ -17,16 +17,16 @@ public class Expendedor{
     public Expendedor(int nBebidas, int precio){
         depositoVuelto = new DepositoVuelto();
         this.precio = precio;
-        CocaCola bebCoca = new CocaCola(32883);
-        for(int i=0; i<nBebidas; ++i){
+        for(int i=0; i<nBebidas; ++i, Bebida.cocaGlobal++){
+            CocaCola bebCoca = new CocaCola(Bebida.cocaGlobal);
             depCocaCola.addBebida(bebCoca);
         }
-        Sprite bebSprite = new Sprite(29798);
-        for(int i=0; i<nBebidas; ++i){
+        for(int i=0; i<nBebidas; ++i, Bebida.spriteGlobal++){
+            Sprite bebSprite = new Sprite(Bebida.spriteGlobal);
             depSprite.addBebida(bebSprite);
         }
-        Fanta bebFanta = new Fanta(39845);
-        for(int i=0; i<nBebidas; ++i){
+        for(int i=0; i<nBebidas; ++i, Bebida.fantaGlobal++){
+            Fanta bebFanta = new Fanta(Bebida.fantaGlobal);
             depFanta.addBebida(bebFanta);
         }
                
@@ -85,6 +85,9 @@ public class Expendedor{
         // cristal del deposito de bebidas
         g.setColor(new Color(80, 140, 145));
         g.fillRect(150, 100, 300, 500);
+        // deposito de monedas recibidas por comprarBebida
+        g.setColor(Color.GRAY);
+        g.fillRect(150, 620, 300, 60);
         depCocaCola.paint(g, 0);
         depSprite.paint(g, 1);
         depFanta.paint(g, 2);
@@ -109,18 +112,18 @@ public class Expendedor{
     public void llenarDepositosVacios(){
         if(depCocaCola.getArrayBebidas().isEmpty()){
             System.out.println("depCocaCola vacio");
-            for(int i = 0; i < 12; i++){
-                depCocaCola.addBebida(new CocaCola(1));
+            for(int i = 0; i < 12; i++, ++Bebida.cocaGlobal){
+                depCocaCola.addBebida(new CocaCola(Bebida.cocaGlobal));
             }
         }
         if(depFanta.getArrayBebidas().isEmpty()){
-            for(int i = 0; i < 12; i++){
-                depFanta.addBebida(new Fanta(1));
+            for(int i = 0; i < 12; i++, ++Bebida.fantaGlobal){
+                depFanta.addBebida(new Fanta(Bebida.fantaGlobal));
             }
         }
         if(depSprite.getArrayBebidas().isEmpty()){
-            for(int i = 0; i < 12; i++){
-                depSprite.addBebida(new Sprite(1));
+            for(int i = 0; i < 12; i++, ++Bebida.spriteGlobal){
+                depSprite.addBebida(new Sprite(Bebida.spriteGlobal));
             }
         }
     }

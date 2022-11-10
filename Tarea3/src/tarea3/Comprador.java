@@ -4,6 +4,9 @@ import java.util.ArrayList;
 public class Comprador{    
     private String tipoBebida = null;
     private ArrayList<Moneda> monedasBolsillo;
+    private ArrayList<CocaCola> cocaColasBolsillo;
+    private ArrayList<Fanta> fantasBolsillo;
+    private ArrayList<Sprite> spritesBolsillo;
     private int vuelto = 0;    
     private Polygon p;
     private int x=0,y=0;
@@ -13,7 +16,13 @@ public class Comprador{
     
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
+<<<<<<< HEAD
         monedasBolsillo = new ArrayList();
+=======
+        cocaColasBolsillo = new ArrayList();
+        fantasBolsillo = new ArrayList();
+        spritesBolsillo = new ArrayList();
+>>>>>>> cefbe14ef5f16d7941e893d509d63dba54ac290b
         boolean bebidaComprada = false;
         try { 
             e.comprarBebida(m, b);
@@ -97,8 +106,24 @@ public class Comprador{
         
         
     }  
-    public void CompraBebida(){
-        
+    public void addBebida(int tipoBebida){
+        switch(tipoBebida){
+            case 0:
+                cocaColasBolsillo.add(new CocaCola(32));
+            case 1:
+                spritesBolsillo.add(new Sprite(23656672));
+            case 2:
+                fantasBolsillo.add(new Fanta(2332));
+        }
+    }
+    public ArrayList<CocaCola> getCocaColasBolsillo(){
+        return cocaColasBolsillo;
+    }
+    public ArrayList<Sprite> getSpritesBolsillo(){
+        return spritesBolsillo;
+    }
+    public ArrayList<Fanta> getFantasBolsillo(){
+        return fantasBolsillo;
     }
     public int cuantoVuelto(){
         return vuelto;

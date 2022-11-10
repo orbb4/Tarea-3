@@ -3,6 +3,9 @@ import java.awt.*;
 
 abstract class Bebida{
     private int serie;
+    static int cocaGlobal = 100;
+    static int spriteGlobal = 200;
+    static int fantaGlobal = 300;
     private int x,y;
     public Bebida(int serie){
         this.serie = serie;
@@ -50,6 +53,8 @@ class CocaCola extends Bebida{
     public void paint(Graphics g){              
         g.setColor(Color.RED);
         g.fillRect(x, y, 80, 40);
+        g.setColor(Color.BLACK);
+        g.drawString("Serie: " + serie, x, y + 10);
         y-= 40 + 1;
     }
 }
@@ -59,6 +64,7 @@ class Sprite extends Bebida{
     private int serie;
     public Sprite(int n2){
         super(n2);
+        serie = n2;
     }
     public String beber(){
         return super.beber()+"Sprite";
@@ -73,6 +79,8 @@ class Sprite extends Bebida{
     public void paint(Graphics g){              
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 80, 40);
+        g.setColor(Color.BLACK);
+        g.drawString("Serie: " + serie, x, y + 10);
         y-= 40 + 1;
     }
 }
@@ -81,6 +89,7 @@ class Fanta extends Bebida{
     private int serie;
     public Fanta(int n3){
         super(n3);
+        serie = n3;
     }
     public String beber(){
         return super.beber()+"Fanta";
@@ -95,6 +104,8 @@ class Fanta extends Bebida{
     public void paint(Graphics g){              
         g.setColor(Color.ORANGE);
         g.fillRect(x, y, 80, 40);
+        g.setColor(Color.BLACK);
+        g.drawString("Serie: " + serie, x, y + 10);
         y-= 40 + 1;
     }
 }
