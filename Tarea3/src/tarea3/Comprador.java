@@ -11,6 +11,8 @@ public class Comprador extends JButton{
     private Polygon p;
     private int x=0,y=0;
     
+    private Graphics gr;
+    
     private Color cUp = new Color(216   ,145,1);
     private Color cDown = new Color(216   ,145,1);
     
@@ -60,6 +62,7 @@ public class Comprador extends JButton{
         
     }
     public void paint(Graphics g){
+        gr = g;
         g.setColor(cUp);
         g.fillOval(x, y, 100, 100);
         
@@ -135,7 +138,6 @@ public class Comprador extends JButton{
         switch(cant){
             case 100:
                 monedasBolsillo.add(new Moneda100());
-                repaint();
                 break;
             case 500:
                 monedasBolsillo.add(new Moneda500());
