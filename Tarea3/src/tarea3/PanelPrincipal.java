@@ -111,81 +111,13 @@ public class PanelPrincipal extends JPanel{
                 
             }
             
-            public void mousePressed(MouseEvent me){
+            public void mousePressed(MouseEvent me) {
                 if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo){
-                    // colision boton 1: comprar CocaCola
-                    if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
-                        System.out.println("boton1");
-                        boton1Xcord = 658;
-                        // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
-                        try{
-                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 0);
-                        comprador.addBebida(0, exp.getBebida().getSerie());
-                        System.out.println(comprador.getBolsilloBebidas().toString());
-                        PanelPrincipal.this.repaint();
-                        }
-                        catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
+                // colision boton 1: comprar CocaCola
+                if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
+                    System.out.println("boton1");
+                    boton1Xcord = 658;
 
-                        }
-                    }
-                    // colision boton 2: comprar Sprite
-                    if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
-                        System.out.println("boton2");
-                        boton2Xcord = 658;
-                        try{
-                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 1);
-                        comprador.addBebida(0, exp.getBebida().getSerie());
-                        System.out.println(comprador.getBolsilloBebidas().toString());
-                        PanelPrincipal.this.repaint();
-                        }
-                        catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
-
-                        }
-                    }
-                    // colision boton 3: comprar Fanta
-                    if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 375  && me.getY() <= 425){
-                        System.out.println("boton3");                    
-                        boton3Xcord = 658;
-                        try{
-                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 2);
-                        comprador.addBebida(0, exp.getBebida().getSerie());
-                        System.out.println(comprador.getBolsilloBebidas().toString());
-                        PanelPrincipal.this.repaint();
-                        }
-                        catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
-
-                        }
-                    }                
-                }else{
-                    PanelPrincipal.this.repaint();
-                }                
-
-                // detectamos si el usuario presionó una bebida del bolsillo para beberla
-                // BEBIDAS ancho: 80 - alto: 40
-                int i = 0;
-                int x = 725;
-                int y = 620;
-                int bebidaRemovida=-1; // si el valor es -1 significa que el user no clickeo una bebida del bolsillo
-                for(Bebida b: comprador.getBolsilloBebidas()){
-                    // si se clickea una bebida, se guarda el index que la bebida seleccionada tiene en el bolsillo
-                    // y se rompe el ciclo for para eliminarla despues
-                    if(me.getX() >= x && me.getX() <= x+80 && me.getY() >= y  && me.getY() <= y+40){                        
-                        //b.beber();
-                        System.out.println(b);
-                        bebidaRemovida = i;
-                        break;
-                    }
-                    i++;
-                    y-=45;
-                    if(i%13==0){
-                        x+=85;
-                        y = 620;
-                    }                    
-                }
-                if(bebidaRemovida != -1){
-                    comprador.eliminaBebida(i);
-                    PanelPrincipal.this.repaint();
-                }               
                     // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
 
                     try{
@@ -200,8 +132,10 @@ public class PanelPrincipal extends JPanel{
                         PanelPrincipal.this.repaint();
                     }
                     catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
-
+                        
                     }
+                }
+                
                 // colision boton 2: comprar Sprite
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
                     System.out.println("boton2");
@@ -219,7 +153,7 @@ public class PanelPrincipal extends JPanel{
                         PanelPrincipal.this.repaint();
                     }
                     catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
-
+                        
                     }
                 }
                 // colision boton 3: comprar Fanta
@@ -239,16 +173,41 @@ public class PanelPrincipal extends JPanel{
                         PanelPrincipal.this.repaint();
                     }
                     catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
-
+                        
                     }
                 }
-            }
-            
-                
+                }else{
+                    PanelPrincipal.this.repaint();
+                }
+                // detectamos si el usuario presionó una bebida del bolsillo para beberla
+                // BEBIDAS ancho: 80 - alto: 40
+                int i = 0;
+                int x = 725;
+                int y = 620;
+                int bebidaRemovida=-1; // si el valor es -1 significa que el user no clickeo una bebida del bolsillo
+                for(Bebida b: comprador.getBolsilloBebidas()){
+                    System.out.println("X: " + x + ", " + x+40 + " - Y: " + y+40 + ", " + y);
+                    // si se clickea una bebida, se guarda el index que la bebida seleccionada tiene en el bolsillo
+                    // y se rompe el ciclo for para eliminarla despues
+                    if(me.getX() >= x && me.getX() <= x+80 && me.getY() >= y  && me.getY() <= y+40){                        
+                        //b.beber();
+                        System.out.println(b);
+                        bebidaRemovida = i;
+                        break;
+                    }
+                    i++;
+                    y-=45;
+                    if(i%13==0){
+                        x+=85;
+                        y = 620;
+                    } 
+            }}
             public void mouseReleased(MouseEvent me) {
                 boton1Xcord = 655;
                 boton2Xcord = 655;
                 boton3Xcord = 655;
+                System.out.println("Y: " + me.getY());
+                System.out.println("X: " + me.getX());
             }
             public void mouseEntered(MouseEvent me) {
             }  

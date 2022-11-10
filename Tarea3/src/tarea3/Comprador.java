@@ -92,7 +92,6 @@ public class Comprador extends JButton{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
-
         System.out.println("no");
         if(monedasBolsillo.size() > 0){
             x = 1050;
@@ -108,7 +107,7 @@ public class Comprador extends JButton{
                 y -= 40;
             }
         }      
-    }
+    }  
     public void addBebida(int tipoBebida, int serie){
         switch(tipoBebida){
             case 0:

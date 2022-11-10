@@ -115,6 +115,7 @@ class Fanta extends Bebida{
         g.drawString("Serie: " + serie, x, y + 10);
         y-= 40 + 1;
     }
+    
 }
 
 
