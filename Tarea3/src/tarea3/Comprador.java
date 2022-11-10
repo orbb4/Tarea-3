@@ -145,6 +145,8 @@ public class Comprador extends JButton{
                 monedasBolsillo.add(m);
                 if(monedasBolsillo.size() > MAXMON){
                     monedasBolsillo.remove(0);
+                    
+                    
                 }
                 m.setXY(515, 500);
                 break;

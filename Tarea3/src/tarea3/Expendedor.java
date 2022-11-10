@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class Expendedor{
     private DepositoVuelto depositoVuelto;
@@ -86,6 +87,10 @@ public class Expendedor{
         g.setColor(new Color(80, 140, 145));
         g.fillRect(150, 100, 300, 500);
         // deposito de monedas recibidas por comprarBebida
+        //deposito en donde se añade moneda seleccionada para comprar
+        g.setColor(Color.GRAY);
+        g.fillRect(515, 500, 185, 150);
+        //deposito de monedas de vuelto
         g.setColor(Color.GRAY);
         g.fillRect(150, 620, 300, 60);
         depCocaCola.paint(g, 0);

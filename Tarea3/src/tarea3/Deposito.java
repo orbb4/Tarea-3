@@ -89,7 +89,6 @@ class Deposito{
 }
 
 class DepositoVuelto{
-    private final Color GRIS = new Color(128, 128, 128);
     private ArrayList<Moneda> monedas;
     public DepositoVuelto(){
         monedas = new ArrayList();
@@ -109,7 +108,15 @@ class DepositoVuelto{
     }
     
     public void paint(Graphics g){
-        g.setColor(GRIS);
-        g.fillRect(515, 500, 185, 150);
+        //g.fillRect(150, 620, 300, 60); lugar donde van las monedas de vuelto
+        int y=620;
+        int x=150;
+        for(int i = 0; i < monedas.size(); i++){
+            monedas.get(i).setXY(x, y);
+            monedas.get(i).paint(g);
+            x+= 40 + 1;
+        }   
     }
 }
+
+
