@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Expendedor{
     private DepositoVuelto depositoVuelto;
     private int precio;
+    private ArrayList<Moneda> depMonedas;
     private Deposito depCocaCola = new Deposito();
     private Deposito depSprite = new Deposito();
     private Deposito depFanta = new Deposito();
@@ -16,6 +17,7 @@ public class Expendedor{
     private Bebida bebidaComprada;
     private boolean mousePresionado;
     public Expendedor(int nBebidas, int precio){
+        depMonedas = new ArrayList();
         depositoVuelto = new DepositoVuelto();
         this.precio = precio;
         for(int i=0; i<nBebidas; ++i, Bebida.cocaGlobal++){
@@ -80,23 +82,29 @@ public class Expendedor{
     }
     //COLOR_PANEL, new int[] {120, 50, 600, 900}
     public void paint(Graphics g){
+        int xExp = 120;
+        int yExp = 50;
         // exterior expendedor 
         g.setColor(new Color(30, 40, 40));
-        g.fillRect(120, 50, 600, 900);
+        g.fillRect(xExp, yExp, 600, 900);
         // cristal del deposito de bebidas
         g.setColor(new Color(80, 140, 145));
-        g.fillRect(150, 100, 300, 500);
+        g.fillRect(xExp+30, yExp+50, 300, 500);
         // deposito de monedas recibidas por comprarBebida
         //deposito en donde se añade moneda seleccionada para comprar
         g.setColor(Color.GRAY);
         g.fillRect(515, 500, 185, 150);
         //deposito de monedas de vuelto
         g.setColor(Color.GRAY);
+        g.fillRect(xExp+30, yExp+570, 300, 80);
+        depCocaCola.paint(g, 0, xExp+30, yExp+510);
+        depSprite.paint(g, 1, xExp + 140, yExp+510);
+        depFanta.paint(g, 2, xExp+250, yExp+510);
+        depositoVuelto.paint(g, xExp+395, 490);
         g.fillRect(150, 620, 300, 60);
-        depCocaCola.paint(g, 0);
-        depSprite.paint(g, 1);
-        depFanta.paint(g, 2);
-        depositoVuelto.paint(g);
+        for(Moneda mx: depMonedas){
+            mx.paint(g);
+        }
         
         
     }
@@ -132,5 +140,11 @@ public class Expendedor{
             }
         }
     }
-
+    
+    public void addMonedas(Moneda m){
+        depMonedas.add(m);
+        for(Moneda mx: depMonedas){
+            mx.setXY(150, 620 - depMonedas.indexOf(mx)*20);
+        }
+    }
 }

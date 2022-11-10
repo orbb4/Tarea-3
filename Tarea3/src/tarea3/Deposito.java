@@ -31,15 +31,12 @@ class Deposito{
     }   
 
     // tipo bebida: 0=cocacola, 1=sprite, 2=fanta
-    public void paint(Graphics g, int tipoBebida){
-        int y = 560;
-        int x;
+    public void paint(Graphics g, int tipoBebida, int x, int y){
         // comprobamos tipo de bebida para posicionarlas en su columna correspondiente
         switch (tipoBebida) {
             // cocacola
             case 0:
                 g.setColor(ROJO);
-                y = 560;
                 x =150;
                 for(int i = 0; i < bebidas.size(); i++){
                     if(bebidas.get(i).getSabor() == "CocaCola"){
@@ -53,8 +50,6 @@ class Deposito{
             // sprite
             case 1:
                 g.setColor(VERDE);
-                y = 560;
-                x = 260;
                 for(int i = 0; i < bebidas.size(); i++){
                     if(bebidas.get(i).getSabor() == "Sprite"){
                         bebidas.get(i).setXY(x, y);
@@ -67,7 +62,6 @@ class Deposito{
             // fanta
             case 2:
                 g.setColor(NARANJO);
-                y=560;
                 x=370;
                 for(int i = 0; i < bebidas.size(); i++){
                     if(bebidas.get(i).getSabor() == "Fanta"){
@@ -107,6 +101,7 @@ class DepositoVuelto{
         }      
     }
     
+<<<<<<< HEAD
     public void paint(Graphics g){
         //g.fillRect(150, 620, 300, 60); lugar donde van las monedas de vuelto
         int y=620;
@@ -116,6 +111,11 @@ class DepositoVuelto{
             monedas.get(i).paint(g);
             x+= 40 + 1;
         }   
+=======
+    public void paint(Graphics g, int x, int y){
+        g.setColor(GRIS);
+        g.fillRect(x, y, 185, 150);
+>>>>>>> beta
     }
 }
 
