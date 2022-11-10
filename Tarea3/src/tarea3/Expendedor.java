@@ -95,13 +95,12 @@ public class Expendedor{
         g.setColor(Color.GRAY);
         g.fillRect(515, 500, 185, 150);
         //deposito de monedas de vuelto
-        /*g.setColor(Color.GRAY);
-        g.fillRect(xExp+30, yExp+570, 300, 80);*/
+        g.setColor(Color.GRAY);
+        g.fillRect(150, 620, 300, 120);
         depCocaCola.paint(g, 0, xExp+30, yExp+510);
         depSprite.paint(g, 1, xExp + 140, yExp+510);
         depFanta.paint(g, 2, xExp+250, yExp+510);
-        //depositoVuelto.paint(g, xExp+395, 490);
-        g.fillRect(150, 620, 300, 60);
+        depositoVuelto.paint(g);
         for(Moneda mx: depMonedas){
             mx.paint(g);
         }

@@ -68,6 +68,7 @@ public class PanelPrincipal extends JPanel{
             int x = 725;
             int y = 620;
             int i = 0;
+            
             for(Bebida b: comprador.getBolsilloBebidas()){
                 b.setXY(x, y);
                 b.paint(g);
@@ -78,6 +79,20 @@ public class PanelPrincipal extends JPanel{
                     y = 620;
                 }
             }
+            // monedas en el depósito del expendedor
+            /*int xv = 150;
+            int yv = 620;
+            int a = 0;
+            for(Moneda m: exp.getDepositoVuelto()){
+                m.setXY(x, y);
+                m.paint(g);
+                y-=45;
+                i++;
+                if(a%7==0){
+                    y+=40;
+                    x = 150;
+                }
+            }*/
             comprador.paint(g);
 
         }

@@ -100,16 +100,32 @@ class DepositoVuelto{
             return null;
         }      
     }
+    public ArrayList<Moneda> getArrayMonedas(){
+        return monedas;
+    }
     
     public void paint(Graphics g){
         //g.fillRect(150, 620, 300, 60); lugar donde van las monedas de vuelto
         int y=620;
         int x=150;
-        for(int i = 0; i < monedas.size(); i++){
+        int aux=109;
+        /*for(int i = 0; i < monedas.size(); i++){
             monedas.get(i).setXY(x, y);
             monedas.get(i).paint(g);
             x+= 40 + 1;
-        }   
+        }  */ 
+        for(int i = 0; i < monedas.size(); i++){
+            monedas.get(i).setXY(x, y);
+            monedas.get(i).paint(g);
+            if(i<6){
+                x+= 40+1;
+            }
+            if(i>=7){
+                x=aux+40+1;
+                y=660;
+            }
+        }
+        
     }
 }
 
