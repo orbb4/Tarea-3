@@ -13,6 +13,7 @@ public class PanelPrincipal extends JPanel{
         private Comprador comprador;
         private Expendedor exp;
         private Moneda mon;
+        private int maxBebidasBolsillo = 26;
         private int boton1Xcord = 655;
         private int boton2Xcord = 655;
         private int boton3Xcord = 655;
@@ -55,18 +56,27 @@ public class PanelPrincipal extends JPanel{
             // bolsillo de bebidas
             g.setColor(new Color(85, 65, 55));
             g.fillRect(725, 50, 170,700);
+            g.setColor(Color.WHITE);            
+            g.drawString("Clickee sobre una bebida", 742, 675);
+            g.drawString("comprada para beberla", 747,695);
+            // mensaje Bolsillo bebidas lleno:
+            g.setColor(Color.RED); 
+            if(comprador.getBolsilloBebidas().size() == maxBebidasBolsillo){
+                g.drawString("BOLSILLO LLENO: debes beber una", 615, 25);
+                g.drawString("bebida antes de poder comprar otra", 615,45);
+            }
             // bebidas en bolsillo del comprador:
             int x = 725;
-            int y = 650;
+            int y = 620;
             int i = 0;
             for(Bebida b: comprador.getBolsilloBebidas()){
                 b.setXY(x, y);
                 b.paint(g);
                 y-=45;
                 i++;
-                if(i%14==0){
+                if(i%13==0){
                     x+=85;
-                    y = 650;
+                    y = 620;
                 }
             }
 
@@ -99,44 +109,74 @@ public class PanelPrincipal extends JPanel{
                 
             }
             
-            public void mousePressed(MouseEvent me) {
-                // colision boton 1: comprar CocaCola
-                if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
-                    System.out.println("boton1");
-                    boton1Xcord = 658;
+            public void mousePressed(MouseEvent me){
+                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo){
+                    // colision boton 1: comprar CocaCola
+                    if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
+                        System.out.println("boton1");
+                        boton1Xcord = 658;
+                        // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
+                        Comprador  c = new Comprador(new Moneda1000(), 0, exp);
+                        comprador.addBebida(0, c.getBolsilloBebidas().get(0).getSerie());
+                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        PanelPrincipal.this.repaint();
+                    }
+                    // colision boton 2: comprar Sprite
+                    if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
+                        System.out.println("boton2");
+                        boton2Xcord = 658;
+                        Comprador  c = new Comprador(new Moneda1000(), 1, exp);
+                        comprador.addBebida(1, c.getBolsilloBebidas().get(0).getSerie());
+                        PanelPrincipal.this.repaint();
+                    }
+                    // colision boton 3: comprar Fanta
+                    if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 375  && me.getY() <= 425){
+                        System.out.println("boton3");                    
+                        boton3Xcord = 658;
+                        Comprador  c = new Comprador(new Moneda1000(), 2, exp);
+                        comprador.addBebida(2, c.getBolsilloBebidas().get(0).getSerie());
+                        PanelPrincipal.this.repaint();
+                    }                
+                }else{
+                    PanelPrincipal.this.repaint();
+                }                
 
-                    // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
-                    Comprador  c = new Comprador(new Moneda1000(), 0, exp);
-                    comprador.addBebida(0, c.getBolsilloBebidas().get(0).getSerie());
-                    System.out.println(comprador.getBolsilloBebidas().toString());
-                    PanelPrincipal.this.repaint();
+                // detectamos si el usuario presionó una bebida del bolsillo para beberla
+                // BEBIDAS ancho: 80 - alto: 40
+                int i = 0;
+                int x = 725;
+                int y = 620;
+                int bebidaRemovida=-1; // si el valor es -1 significa que el user no clickeo una bebida del bolsillo
+                for(Bebida b: comprador.getBolsilloBebidas()){
+                    System.out.println("X: " + x + ", " + x+40 + " - Y: " + y+40 + ", " + y);
+                    // si se clickea una bebida, se guarda el index que la bebida seleccionada tiene en el bolsillo
+                    // y se rompe el ciclo for para eliminarla despues
+                    if(me.getX() >= x && me.getX() <= x+80 && me.getY() >= y  && me.getY() <= y+40){                        
+                        //b.beber();
+                        System.out.println(b);
+                        bebidaRemovida = i;
+                        break;
+                    }
+                    i++;
+                    y-=45;
+                    if(i%13==0){
+                        x+=85;
+                        y = 620;
+                    }                    
                 }
-                // colision boton 2: comprar Sprite
-                if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
-                    System.out.println("boton2");
-                    boton2Xcord = 658;
-                    // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
-                    Comprador  c = new Comprador(new Moneda1000(), 1, exp);
-                    comprador.addBebida(1, c.getBolsilloBebidas().get(0).getSerie());
+                if(bebidaRemovida != -1){
+                    comprador.eliminaBebida(i);
                     PanelPrincipal.this.repaint();
-                }
-                // colision boton 3: comprar Fanta
-                if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 375  && me.getY() <= 425){
-                    System.out.println("boton3");                    
-                    boton3Xcord = 658;
-                    // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
-                    Comprador  c = new Comprador(new Moneda1000(), 2, exp);
-                    comprador.addBebida(2, c.getBolsilloBebidas().get(0).getSerie());
-                    PanelPrincipal.this.repaint();
-                }
-                
+                }               
             }
+            
+                
             public void mouseReleased(MouseEvent me) {
                 boton1Xcord = 655;
                 boton2Xcord = 655;
                 boton3Xcord = 655;
-                System.out.println("Y: " + me.getY());
-                System.out.println("X: " + me.getX());
+                //System.out.println("Y: " + me.getY());
+                //System.out.println("X: " + me.getX());
             }
             public void mouseEntered(MouseEvent me) {
             }  

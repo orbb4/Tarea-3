@@ -85,6 +85,7 @@ public class Comprador{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
+        // deberian ser nuevas variables (en vez de reutilizar x e y)
         //x = 1050;
         //y = 700;
         /* al intentar ejecutar el programa incluyendo este codigo, no parte (index out of bounds)
@@ -116,6 +117,9 @@ public class Comprador{
     }
     public ArrayList<Bebida> getBolsilloBebidas(){
         return bolsilloBebidas;
+    }
+    public void eliminaBebida(int i){
+        bolsilloBebidas.remove(i);
     }
     public int cuantoVuelto(){
         return vuelto;
