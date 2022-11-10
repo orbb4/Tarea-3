@@ -39,6 +39,7 @@ class Deposito{
             // cocacola
             case 0:
                 g.setColor(ROJO);
+                y = 560;
                 x =150;
                 for(int i = 0; i < bebidas.size(); i++){
                     if(bebidas.get(i).getSabor() == "CocaCola"){

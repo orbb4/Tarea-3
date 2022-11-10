@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class PanelPrincipal extends JPanel{
         private Color color;
         private final Color VERDEMENTA = new Color(36, 211, 154);
-        private ArrayList<Moneda> bolsilloMonedas;
         private int[] rect; // dimensiones del rectangulo (x, y, ancho, alto)
         private Comprador comprador;
         private Expendedor exp;
@@ -75,15 +74,6 @@ public class PanelPrincipal extends JPanel{
         }
         private class EscuchaRaton  implements MouseListener {
             public void mouseClicked(MouseEvent me){
-                /*if(me.getX() > 1188 && me.getX() < 1288 && me.getY() > 100 && me.getY() < 200){
-                    System.out.println("100");
-                }
-                if(me.getX() > 1188 && me.getX() < 1288 && me.getY() > 300 && me.getY() < 400){
-                    System.out.println("500");
-                }
-                if(me.getX() > 1188 && me.getX() < 1288 && me.getY() > 500 && me.getY() < 600){
-                    System.out.println("1000");
-                }*/
                 
                 // colision mouse -  expendedor: rellena depositos de bebida vacios
                 if((me.getX() >= exp.getExpRect().getMinX() && me.getX() <= exp.getExpRect().getMaxX())&&( me.getY() >= exp.getExpRect().getMinY() && me.getY() <= exp.getExpRect().getMaxY())){
@@ -95,14 +85,15 @@ public class PanelPrincipal extends JPanel{
                 // colision mouse - monedas a seleccionar 
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>100 && me.getY()<200)){
                     System.out.println("100");
+                    //comprador.getMonedasBolsillo().add(new Moneda m);
                 }
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>300 && me.getY()<400)){
                     System.out.println("500");
-                
+                    //comprador.getMonedasBolsillo().add(new Moneda500 m);
                 }
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>500 && me.getY()<600)){
                     System.out.println("1000");
-                
+                    //comprador.getMonedasBolsillo().add(new Moneda1000 m);
                 }
                 
  

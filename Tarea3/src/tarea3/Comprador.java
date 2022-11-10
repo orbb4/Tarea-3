@@ -15,6 +15,7 @@ public class Comprador{
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
         bolsilloBebidas = new ArrayList();
+        monedasBolsillo = new ArrayList();
         boolean bebidaComprada = false;
         try { 
             e.comprarBebida(m, b);
@@ -84,8 +85,19 @@ public class Comprador{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
-        
-        
+        x = 1050;
+        y = 700;
+        /* Rena: si intento ejecutarlo incluyendo este codigo el programa no parte 
+        monedasBolsillo.get(0).setXY(x, y);
+        for(int i = 0; i < monedasBolsillo.size(); i++){
+            if(i%17 == 0 && i != 0){
+                y = 700;
+                x +=40;
+            }
+            monedasBolsillo.get(i).paint(g);
+            y -= 40;
+            monedasBolsillo.get(i).setXY(x, y);
+        }*/
         
         
     }  
@@ -110,5 +122,9 @@ public class Comprador{
     }
     public String queBebiste(){
         return tipoBebida;
+    }
+    
+    public  ArrayList<Moneda> getMonedasBolsillo(){
+       return monedasBolsillo;
     }
 }
