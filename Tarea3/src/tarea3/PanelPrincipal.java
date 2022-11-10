@@ -108,28 +108,46 @@ public class PanelPrincipal extends JPanel{
                     boton1Xcord = 658;
 
                     // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
-                    Comprador  c = new Comprador(new Moneda1000(), 0, exp);
-                    comprador.addBebida(0, c.getBolsilloBebidas().get(0).getSerie());
-                    System.out.println(comprador.getBolsilloBebidas().toString());
-                    PanelPrincipal.this.repaint();
+
+                    try{
+                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 0);
+                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        PanelPrincipal.this.repaint();
+                    }
+                    catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
+                        
+                    }
                 }
                 // colision boton 2: comprar Sprite
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
                     System.out.println("boton2");
                     boton2Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
-                    Comprador  c = new Comprador(new Moneda1000(), 1, exp);
-                    comprador.addBebida(1, c.getBolsilloBebidas().get(0).getSerie());
-                    PanelPrincipal.this.repaint();
+                    try{
+                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 1);
+                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        PanelPrincipal.this.repaint();
+                    }
+                    catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
+                        
+                    }
                 }
                 // colision boton 3: comprar Fanta
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 375  && me.getY() <= 425){
                     System.out.println("boton3");                    
                     boton3Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
-                    Comprador  c = new Comprador(new Moneda1000(), 2, exp);
-                    comprador.addBebida(2, c.getBolsilloBebidas().get(0).getSerie());
-                    PanelPrincipal.this.repaint();
+                    try{
+                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 2);
+                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        PanelPrincipal.this.repaint();
+                    }
+                    catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
+                        
+                    }
                 }
                 
             }

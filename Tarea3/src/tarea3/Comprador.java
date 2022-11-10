@@ -64,10 +64,10 @@ public class Comprador extends JButton{
     public void paint(Graphics g){
         gr = g;
         g.setColor(cUp);
-        g.fillOval(x, y, 100, 100);
+        g.fillOval(900, 200, 100, 100);
         
         g.setColor(cDown);
-        g.fillRect(x, y+100, 100, 400);
+        g.fillRect(900, 300, 100, 400);
 
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(1200, 0, 150,700);
@@ -95,11 +95,11 @@ public class Comprador extends JButton{
         System.out.println("no");
         if(monedasBolsillo.size() > 0){
             x = 1050;
-            y = 600;
+            y = 650;
             monedasBolsillo.get(0).setXY(1050, 600);
             for(int i = 0; i < monedasBolsillo.size(); i++){
                 if(i%17 == 0 && i != 0){
-                    y = 700;
+                    y = 650;
                     x +=40;
                 }
                 monedasBolsillo.get(i).setXY(x, y);
@@ -141,12 +141,16 @@ public class Comprador extends JButton{
                 break;
             case 500:
                 monedasBolsillo.add(new Moneda500());
-                repaint();
                 break;
             case 1000:
                 monedasBolsillo.add(new Moneda1000());
-                repaint();
                 break;
+        }
+    }
+    public Moneda removeMoneda(){
+        if (monedasBolsillo.size() != 0) return monedasBolsillo.remove(0);
+        else{
+            return null;
         }
     }
 }
