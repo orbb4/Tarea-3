@@ -1,7 +1,9 @@
 package tarea3;
 import java.awt.*;
+import javax.swing.*;
 import java.util.ArrayList;
-public class Comprador{    
+import javax.swing.SwingUtilities;
+public class Comprador extends JButton{    
     private String tipoBebida = null;
     private ArrayList<Moneda> monedasBolsillo;
     private ArrayList<Bebida> bolsilloBebidas;
@@ -9,11 +11,15 @@ public class Comprador{
     private Polygon p;
     private int x=0,y=0;
     
+    private Graphics gr;
+    
     private Color cUp = new Color(216   ,145,1);
     private Color cDown = new Color(216   ,145,1);
     
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
+        this.setLayout(null);
+        this.setVisible(true);
         bolsilloBebidas = new ArrayList();
         monedasBolsillo = new ArrayList();
         boolean bebidaComprada = false;
@@ -56,11 +62,12 @@ public class Comprador{
         
     }
     public void paint(Graphics g){
+        gr = g;
         g.setColor(cUp);
-        g.fillOval(x, y, 100, 100);
+        g.fillOval(900, 200, 100, 100);
         
         g.setColor(cDown);
-        g.fillRect(x, y+100, 100, 400);
+        g.fillRect(900, 300, 100, 400);
 
         g.setColor(Color.LIGHT_GRAY);
         g.fillRect(1200, 0, 150,700);
@@ -85,6 +92,7 @@ public class Comprador{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
+    }
         // deberian ser nuevas variables (en vez de reutilizar x e y)
         //x = 1050;
         //y = 700;
@@ -94,14 +102,25 @@ public class Comprador{
             if(i%17 == 0 && i != 0){
                 y = 700;
                 x +=40;
+=======
+        System.out.println("no");
+        if(monedasBolsillo.size() > 0){
+            x = 1050;
+            y = 650;
+            monedasBolsillo.get(0).setXY(1050, 600);
+            for(int i = 0; i < monedasBolsillo.size(); i++){
+                if(i%17 == 0 && i != 0){
+                    y = 650;
+                    x +=40;
+                }
+                monedasBolsillo.get(i).setXY(x, y);
+                monedasBolsillo.get(i).paint(g);
+                y -= 40;
+>>>>>>> a45c0aae3cce6870d1fc263810e203ceaa6d863d
             }
-            monedasBolsillo.get(i).paint(g);
-            y -= 40;
-            monedasBolsillo.get(i).setXY(x, y);
-        }*/
-        
-        
-    }  
+        }      
+    }
+    */
     public void addBebida(int tipoBebida, int serie){
         switch(tipoBebida){
             case 0:
@@ -130,5 +149,24 @@ public class Comprador{
     
     public  ArrayList<Moneda> getMonedasBolsillo(){
        return monedasBolsillo;
+    }
+    public void addMoneda(int cant){
+        switch(cant){
+            case 100:
+                monedasBolsillo.add(new Moneda100());
+                break;
+            case 500:
+                monedasBolsillo.add(new Moneda500());
+                break;
+            case 1000:
+                monedasBolsillo.add(new Moneda1000());
+                break;
+        }
+    }
+    public Moneda removeMoneda(){
+        if (monedasBolsillo.size() != 0) return monedasBolsillo.remove(0);
+        else{
+            return null;
+        }
     }
 }

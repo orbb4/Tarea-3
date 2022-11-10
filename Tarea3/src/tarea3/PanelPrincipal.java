@@ -28,7 +28,6 @@ public class PanelPrincipal extends JPanel{
         }
         public void paint(Graphics g){
             super.paint(g);       
-            comprador.paint(g);
             exp.paint(g);
             Toolkit t = Toolkit.getDefaultToolkit(); 
             Image cocaImage = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
@@ -79,7 +78,7 @@ public class PanelPrincipal extends JPanel{
                     y = 620;
                 }
             }
-
+            comprador.paint(g);
 
         }
         private class EscuchaRaton  implements MouseListener {
@@ -94,15 +93,18 @@ public class PanelPrincipal extends JPanel{
                 // colision mouse - monedas a seleccionar 
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>100 && me.getY()<200)){
                     System.out.println("100");
-                    //comprador.getMonedasBolsillo().add(new Moneda m);
+                    comprador.addMoneda(100);
+                    PanelPrincipal.this.repaint();
                 }
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>300 && me.getY()<400)){
                     System.out.println("500");
-                    //comprador.getMonedasBolsillo().add(new Moneda500 m);
+                    comprador.addMoneda(500);
+                    PanelPrincipal.this.repaint();
                 }
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>500 && me.getY()<600)){
                     System.out.println("1000");
-                    //comprador.getMonedasBolsillo().add(new Moneda1000 m);
+                    comprador.addMoneda(1000);
+                    PanelPrincipal.this.repaint();
                 }
                 
  
@@ -167,6 +169,47 @@ public class PanelPrincipal extends JPanel{
                     comprador.eliminaBebida(i);
                     PanelPrincipal.this.repaint();
                 }               
+                    // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
+
+                    try{
+                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 0);
+                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        PanelPrincipal.this.repaint();
+                    }
+                    catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
+                        
+                    }
+                // colision boton 2: comprar Sprite
+                if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325){
+                    System.out.println("boton2");
+                    boton2Xcord = 658;
+                    // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
+                    try{
+                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 1);
+                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        PanelPrincipal.this.repaint();
+                    }
+                    catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
+                        
+                    }
+                }
+                // colision boton 3: comprar Fanta
+                if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 375  && me.getY() <= 425){
+                    System.out.println("boton3");                    
+                    boton3Xcord = 658;
+                    // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
+                    try{
+                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 2);
+                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        PanelPrincipal.this.repaint();
+                    }
+                    catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
+                        
+                    }
+                }
             }
             
                 
