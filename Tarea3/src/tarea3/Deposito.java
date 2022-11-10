@@ -101,7 +101,6 @@ class DepositoVuelto{
         }      
     }
     
-<<<<<<< HEAD
     public void paint(Graphics g){
         //g.fillRect(150, 620, 300, 60); lugar donde van las monedas de vuelto
         int y=620;
@@ -111,11 +110,6 @@ class DepositoVuelto{
             monedas.get(i).paint(g);
             x+= 40 + 1;
         }   
-=======
-    public void paint(Graphics g, int x, int y){
-        g.setColor(GRIS);
-        g.fillRect(x, y, 185, 150);
->>>>>>> beta
     }
 }
 
