@@ -4,10 +4,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class Expendedor{
     private DepositoVuelto depositoVuelto;
     private int precio;
+    private ArrayList<Moneda> depMonedas;
     private Deposito depCocaCola = new Deposito();
     private Deposito depSprite = new Deposito();
     private Deposito depFanta = new Deposito();
@@ -15,6 +17,7 @@ public class Expendedor{
     private Bebida bebidaComprada;
     private boolean mousePresionado;
     public Expendedor(int nBebidas, int precio){
+        depMonedas = new ArrayList();
         depositoVuelto = new DepositoVuelto();
         this.precio = precio;
         for(int i=0; i<nBebidas; ++i, Bebida.cocaGlobal++){
@@ -88,6 +91,9 @@ public class Expendedor{
         // deposito de monedas recibidas por comprarBebida
         g.setColor(Color.GRAY);
         g.fillRect(150, 620, 300, 60);
+        for(Moneda mx: depMonedas){
+            mx.paint(g);
+        }
         depCocaCola.paint(g, 0);
         depSprite.paint(g, 1);
         depFanta.paint(g, 2);
@@ -127,5 +133,11 @@ public class Expendedor{
             }
         }
     }
-
+    
+    public void addMonedas(Moneda m){
+        depMonedas.add(m);
+        for(Moneda mx: depMonedas){
+            mx.setXY(150, 620 - depMonedas.indexOf(mx)*20);
+        }
+    }
 }

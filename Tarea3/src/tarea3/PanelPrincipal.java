@@ -122,13 +122,14 @@ public class PanelPrincipal extends JPanel{
 
                     try{
                         if(comprador.getMonedasBolsillo().size() != 0){
+                            exp.addMonedas(comprador.getMonedasBolsillo().get(0));
                             exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 0);
                         }
                         else{
                             throw new PagoIncorrectoException("No hay monedas en el bolsillo");
                         }
                         comprador.addBebida(0, exp.getBebida().getSerie());
-                        System.out.println(comprador.getBolsilloBebidas().toString());
+                        System.out.println("comprado");
                         PanelPrincipal.this.repaint();
                     }
                     catch(NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex){
@@ -143,6 +144,7 @@ public class PanelPrincipal extends JPanel{
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     try{
                         if(comprador.getMonedasBolsillo().size() != 0){
+                            exp.addMonedas(comprador.getMonedasBolsillo().get(0));
                             exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 1);
                         }
                         else{
@@ -163,6 +165,7 @@ public class PanelPrincipal extends JPanel{
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     try{
                         if(comprador.getMonedasBolsillo().size() != 0){
+                            exp.addMonedas(comprador.getMonedasBolsillo().get(0));
                             exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 2);
                         }
                         else{
