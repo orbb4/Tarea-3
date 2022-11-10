@@ -85,21 +85,20 @@ public class Comprador{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
-        //x = 1050;
-        //y = 700;
-        /* al intentar ejecutar el programa incluyendo este codigo, no parte (index out of bounds)
-        monedasBolsillo.get(0).setXY(x, y);
-        for(int i = 0; i < monedasBolsillo.size(); i++){
-            if(i%17 == 0 && i != 0){
-                y = 700;
-                x +=40;
-            }
+        if(monedasBolsillo.size() > 0){
+            x = 1050;
+            y = 600;
+            monedasBolsillo.get(0).setXY(x, y);
+            for(int i = 0; i < monedasBolsillo.size(); i++){
+                    if(i%17 == 0 && i != 0){
+                    y = 700;
+                    x +=40;
+                    }
             monedasBolsillo.get(i).paint(g);
             y -= 40;
             monedasBolsillo.get(i).setXY(x, y);
-        }*/
-        
-        
+            }
+        }      
     }  
     public void addBebida(int tipoBebida, int serie){
         switch(tipoBebida){

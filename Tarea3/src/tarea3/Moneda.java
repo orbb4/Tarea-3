@@ -21,7 +21,7 @@ class Moneda{
     }
 }
 class Moneda100 extends Moneda{
-    private int y = 560, x;
+    private int y = 650, x;
     private static int numSerieContador = 0;
     private String numSerie;
     Moneda100(){
@@ -40,12 +40,12 @@ class Moneda100 extends Moneda{
     }
     public void paint(Graphics g){              
         g.setColor(Color.YELLOW);
-        g.fillOval(x, y, 40, 40);
-        y-= 40 + 1;
+        g.fillOval(x, y, 20, 40);
+        y-= 20 + 1;
     }
 }
 class Moneda500 extends Moneda{
-    private int y = 560, x;
+    private int y = 650, x;
     private static int numSerieContador = 0;
     private String numSerie;
     Moneda500(){
@@ -64,12 +64,12 @@ class Moneda500 extends Moneda{
     }
     public void paint(Graphics g){              
         g.setColor(Color.orange);
-        g.fillOval(x, y, 40, 40);
-        y-= 40 + 1;
+        g.fillOval(x, y, 20, 40);
+        y-= 20 + 1;
     }
 }
 class Moneda1000 extends Moneda{
-    private int y = 560, x;
+    private int y = 650, x;
     private static int numSerieContador = 0;
     private String numSerie;
     Moneda1000( ){
@@ -88,7 +88,7 @@ class Moneda1000 extends Moneda{
     }
     public void paint(Graphics g){              
         g.setColor(Color.RED);
-        g.fillOval(x, y, 40, 40);
-        y-= 40 + 1;
+        g.fillOval(x, y, 20, 40);
+        y-= 20 + 1;
     }
 }

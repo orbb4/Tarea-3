@@ -53,7 +53,7 @@ class CocaCola extends Bebida{
     public void paint(Graphics g){              
         g.setColor(Color.RED);
         g.fillRect(x, y, 80, 40);
-        g.setColor(Color.BLACK);
+        g.setColor(Color.WHITE);
         g.drawString("Serie: " + serie, x, y + 10);
         y-= 40 + 1;
     }
