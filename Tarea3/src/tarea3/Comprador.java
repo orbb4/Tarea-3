@@ -85,9 +85,9 @@ public class Comprador{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
-        x = 1050;
-        y = 700;
-        /* Rena: si intento ejecutar el programa incluyendo este codigo, no parte 
+        //x = 1050;
+        //y = 700;
+        /* al intentar ejecutar el programa incluyendo este codigo, no parte (index out of bounds)
         monedasBolsillo.get(0).setXY(x, y);
         for(int i = 0; i < monedasBolsillo.size(); i++){
             if(i%17 == 0 && i != 0){

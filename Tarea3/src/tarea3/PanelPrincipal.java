@@ -77,7 +77,6 @@ public class PanelPrincipal extends JPanel{
                 
                 // colision mouse -  expendedor: rellena depositos de bebida vacios
                 if((me.getX() >= exp.getExpRect().getMinX() && me.getX() <= exp.getExpRect().getMaxX())&&( me.getY() >= exp.getExpRect().getMinY() && me.getY() <= exp.getExpRect().getMaxY())){
-                    System.out.println("colision");
                     exp.llenarDepositosVacios();
                     PanelPrincipal.this.repaint();
                     
