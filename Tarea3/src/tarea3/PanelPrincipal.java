@@ -110,7 +110,12 @@ public class PanelPrincipal extends JPanel{
                     // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
 
                     try{
-                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 0);
+                        if(comprador.getMonedasBolsillo().size() != 0){
+                            exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 0);
+                        }
+                        else{
+                            throw new PagoIncorrectoException("No hay monedas en el bolsillo");
+                        }
                         comprador.addBebida(0, exp.getBebida().getSerie());
                         System.out.println(comprador.getBolsilloBebidas().toString());
                         PanelPrincipal.this.repaint();
@@ -125,8 +130,13 @@ public class PanelPrincipal extends JPanel{
                     boton2Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     try{
-                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 1);
-                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        if(comprador.getMonedasBolsillo().size() != 0){
+                            exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 1);
+                        }
+                        else{
+                            throw new PagoIncorrectoException("No hay monedas en el bolsillo");
+                        }
+                        comprador.addBebida(1, exp.getBebida().getSerie());
                         System.out.println(comprador.getBolsilloBebidas().toString());
                         PanelPrincipal.this.repaint();
                     }
@@ -140,8 +150,13 @@ public class PanelPrincipal extends JPanel{
                     boton3Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     try{
-                        exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 2);
-                        comprador.addBebida(0, exp.getBebida().getSerie());
+                        if(comprador.getMonedasBolsillo().size() != 0){
+                            exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 2);
+                        }
+                        else{
+                            throw new PagoIncorrectoException("No hay monedas en el bolsillo");
+                        }
+                        comprador.addBebida(2, exp.getBebida().getSerie());
                         System.out.println(comprador.getBolsilloBebidas().toString());
                         PanelPrincipal.this.repaint();
                     }
