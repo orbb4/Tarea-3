@@ -55,13 +55,20 @@ public class PanelPrincipal extends JPanel{
             g.fillOval(boton3Xcord, 375, 50, 50);
             // bolsillo de bebidas
             g.setColor(new Color(85, 65, 55));
-            g.fillRect(740, 50, 150,700);
+            g.fillRect(725, 50, 170,700);
             // bebidas en bolsillo del comprador:
-            for(CocaCola coca: comprador.getCocaColasBolsillo()){
-                System.out.println("here");
-                coca.setXY(40, 750);
-                //g.fillOval(750, 40, 40, 100);
-                coca.paint(g);
+            int x = 725;
+            int y = 650;
+            int i = 0;
+            for(Bebida b: comprador.getBolsilloBebidas()){
+                b.setXY(x, y);
+                b.paint(g);
+                y-=45;
+                i++;
+                if(i%14==0){
+                    x+=85;
+                    y = 650;
+                }
             }
 
 
@@ -108,10 +115,10 @@ public class PanelPrincipal extends JPanel{
                     System.out.println("boton1");
                     boton1Xcord = 658;
 
-                    // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
+                    // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
                     Comprador  c = new Comprador(new Moneda1000(), 0, exp);
-                    comprador.addBebida(0);
-                    System.out.println(comprador.getCocaColasBolsillo().toString());
+                    comprador.addBebida(0, c.getBolsilloBebidas().get(0).getSerie());
+                    System.out.println(comprador.getBolsilloBebidas().toString());
                     PanelPrincipal.this.repaint();
                 }
                 // colision boton 2: comprar Sprite
@@ -120,7 +127,7 @@ public class PanelPrincipal extends JPanel{
                     boton2Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     Comprador  c = new Comprador(new Moneda1000(), 1, exp);
-                    comprador.addBebida(1);
+                    comprador.addBebida(1, c.getBolsilloBebidas().get(0).getSerie());
                     PanelPrincipal.this.repaint();
                 }
                 // colision boton 3: comprar Fanta
@@ -129,7 +136,7 @@ public class PanelPrincipal extends JPanel{
                     boton3Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     Comprador  c = new Comprador(new Moneda1000(), 2, exp);
-                    comprador.addBebida(2);
+                    comprador.addBebida(2, c.getBolsilloBebidas().get(0).getSerie());
                     PanelPrincipal.this.repaint();
                 }
                 

@@ -4,9 +4,7 @@ import java.util.ArrayList;
 public class Comprador{    
     private String tipoBebida = null;
     private ArrayList<Moneda> monedasBolsillo;
-    private ArrayList<CocaCola> cocaColasBolsillo;
-    private ArrayList<Fanta> fantasBolsillo;
-    private ArrayList<Sprite> spritesBolsillo;
+    private ArrayList<Bebida> bolsilloBebidas;
     private int vuelto = 0;    
     private Polygon p;
     private int x=0,y=0;
@@ -16,13 +14,12 @@ public class Comprador{
     
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
-        cocaColasBolsillo = new ArrayList();
-        fantasBolsillo = new ArrayList();
-        spritesBolsillo = new ArrayList();
+        bolsilloBebidas = new ArrayList();
         boolean bebidaComprada = false;
         try { 
             e.comprarBebida(m, b);
             Bebida bebida = e.getBebida();
+            bolsilloBebidas.add(bebida);
             bebidaComprada = true;
         } catch (NoHayBebidaException | PagoIncorrectoException | PagoInsuficienteException ex) {
             System.out.println(ex);
@@ -92,24 +89,21 @@ public class Comprador{
         
         
     }  
-    public void addBebida(int tipoBebida){
+    public void addBebida(int tipoBebida, int serie){
         switch(tipoBebida){
             case 0:
-                cocaColasBolsillo.add(new CocaCola(32));
+                bolsilloBebidas.add(new CocaCola(serie));
+                break;
             case 1:
-                spritesBolsillo.add(new Sprite(23656672));
+                bolsilloBebidas.add(new Sprite(serie));
+                break;
             case 2:
-                fantasBolsillo.add(new Fanta(2332));
+                bolsilloBebidas.add(new Fanta(serie));
+                break;
         }
     }
-    public ArrayList<CocaCola> getCocaColasBolsillo(){
-        return cocaColasBolsillo;
-    }
-    public ArrayList<Sprite> getSpritesBolsillo(){
-        return spritesBolsillo;
-    }
-    public ArrayList<Fanta> getFantasBolsillo(){
-        return fantasBolsillo;
+    public ArrayList<Bebida> getBolsilloBebidas(){
+        return bolsilloBebidas;
     }
     public int cuantoVuelto(){
         return vuelto;

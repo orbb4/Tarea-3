@@ -6,7 +6,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import javax.swing.*;
-
 public class Ventana extends JFrame {
     
     private final Color COLOR_PANEL = new Color(50, 50, 160);
