@@ -148,7 +148,6 @@ public class PanelPrincipal extends JPanel{
                 int y = 620;
                 int bebidaRemovida=-1; // si el valor es -1 significa que el user no clickeo una bebida del bolsillo
                 for(Bebida b: comprador.getBolsilloBebidas()){
-                    System.out.println("X: " + x + ", " + x+40 + " - Y: " + y+40 + ", " + y);
                     // si se clickea una bebida, se guarda el index que la bebida seleccionada tiene en el bolsillo
                     // y se rompe el ciclo for para eliminarla despues
                     if(me.getX() >= x && me.getX() <= x+80 && me.getY() >= y  && me.getY() <= y+40){                        
@@ -175,8 +174,6 @@ public class PanelPrincipal extends JPanel{
                 boton1Xcord = 655;
                 boton2Xcord = 655;
                 boton3Xcord = 655;
-                //System.out.println("Y: " + me.getY());
-                //System.out.println("X: " + me.getX());
             }
             public void mouseEntered(MouseEvent me) {
             }  
