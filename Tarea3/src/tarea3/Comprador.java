@@ -107,6 +107,7 @@ public class Comprador extends JButton{
                     break;
             }
         }      
+        
     }  
     public void addBebida(int tipoBebida, int serie){
         switch(tipoBebida){

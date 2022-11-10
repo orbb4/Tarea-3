@@ -100,6 +100,9 @@ class DepositoVuelto{
             return null;
         }      
     }
+    public int getTamano(){
+        return monedas.size();
+    }
     public ArrayList<Moneda> getArrayMonedas(){
         return monedas;
     }
@@ -108,12 +111,7 @@ class DepositoVuelto{
         //g.fillRect(150, 620, 300, 60); lugar donde van las monedas de vuelto
         int y=620;
         int x=150;
-        int aux=109;
-        /*for(int i = 0; i < monedas.size(); i++){
-            monedas.get(i).setXY(x, y);
-            monedas.get(i).paint(g);
-            x+= 40 + 1;
-        }  */ 
+        int aux=150;
         for(int i = 0; i < monedas.size(); i++){
             monedas.get(i).setXY(x, y);
             monedas.get(i).paint(g);
@@ -121,12 +119,19 @@ class DepositoVuelto{
                 x+= 40+1;
             }
             if(i>=7){
-                x=aux+40+1;
+                x=aux;
+                x+=40+1;
+                y=660;
+            }
+        }
+        for(int a = 7; a < monedas.size(); a++){
+            monedas.get(a).setXY(aux, y);
+            monedas.get(a).paint(g);
+                aux+=40+1;
                 y=660;
             }
         }
         
-    }
 }
 
 

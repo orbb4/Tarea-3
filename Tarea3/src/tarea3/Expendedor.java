@@ -80,6 +80,10 @@ public class Expendedor{
     public DepositoVuelto getDepositoVuelto(){
         return depositoVuelto;
     }
+    //cantidad de monedas que tiene el depósito de monedas;
+    public int getTamano(){
+        return depositoVuelto.getTamano();
+    }
     //COLOR_PANEL, new int[] {120, 50, 600, 900}
     public void paint(Graphics g){
         int xExp = 120;

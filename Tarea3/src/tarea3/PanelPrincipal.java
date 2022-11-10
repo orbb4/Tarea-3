@@ -79,20 +79,6 @@ public class PanelPrincipal extends JPanel{
                     y = 620;
                 }
             }
-            // monedas en el depósito del expendedor
-            /*int xv = 150;
-            int yv = 620;
-            int a = 0;
-            for(Moneda m: exp.getDepositoVuelto()){
-                m.setXY(x, y);
-                m.paint(g);
-                y-=45;
-                i++;
-                if(a%7==0){
-                    y+=40;
-                    x = 150;
-                }
-            }*/
             comprador.paint(g);
 
         }
@@ -121,9 +107,16 @@ public class PanelPrincipal extends JPanel{
                     comprador.addMoneda(1000);
                     PanelPrincipal.this.repaint();
                 }
+                //colision mouse - deposito de vuelto
+                if((me.getX()>150 && me.getX()<450 && me.getY()>620 && me.getY()<720)){
+                    System.out.println("click en deposito vuelto");
+                    /*for(int i=0; i<exp.getTamano(); i++){
+                        //comprador.addMoneda(100);
+                    }*/
+                    PanelPrincipal.this.repaint();
+                }
                 
  
-                
             }
             
             public void mousePressed(MouseEvent me) {
