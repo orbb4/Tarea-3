@@ -87,7 +87,7 @@ public class Comprador{
         g.drawString("1000 = ", 860, 30);
         x = 1050;
         y = 700;
-        /* Rena: si intento ejecutarlo incluyendo este codigo el programa no parte 
+        /* Rena: si intento ejecutar el programa incluyendo este codigo, no parte 
         monedasBolsillo.get(0).setXY(x, y);
         for(int i = 0; i < monedasBolsillo.size(); i++){
             if(i%17 == 0 && i != 0){
