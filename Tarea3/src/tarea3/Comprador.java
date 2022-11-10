@@ -92,6 +92,17 @@ public class Comprador extends JButton{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
+    }
+        // deberian ser nuevas variables (en vez de reutilizar x e y)
+        //x = 1050;
+        //y = 700;
+        /* al intentar ejecutar el programa incluyendo este codigo, no parte (index out of bounds)
+        monedasBolsillo.get(0).setXY(x, y);
+        for(int i = 0; i < monedasBolsillo.size(); i++){
+            if(i%17 == 0 && i != 0){
+                y = 700;
+                x +=40;
+=======
         System.out.println("no");
         if(monedasBolsillo.size() > 0){
             x = 1050;
@@ -105,9 +116,11 @@ public class Comprador extends JButton{
                 monedasBolsillo.get(i).setXY(x, y);
                 monedasBolsillo.get(i).paint(g);
                 y -= 40;
+>>>>>>> a45c0aae3cce6870d1fc263810e203ceaa6d863d
             }
         }      
-    }  
+    }
+    */
     public void addBebida(int tipoBebida, int serie){
         switch(tipoBebida){
             case 0:
@@ -123,6 +136,9 @@ public class Comprador extends JButton{
     }
     public ArrayList<Bebida> getBolsilloBebidas(){
         return bolsilloBebidas;
+    }
+    public void eliminaBebida(int i){
+        bolsilloBebidas.remove(i);
     }
     public int cuantoVuelto(){
         return vuelto;

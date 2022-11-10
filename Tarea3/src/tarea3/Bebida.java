@@ -28,6 +28,12 @@ abstract class Bebida{
     public void paint(Graphics g){              
 
     }
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return y;
+    }
 }
 
 class CocaCola extends Bebida{
@@ -57,6 +63,7 @@ class CocaCola extends Bebida{
         g.drawString("Serie: " + serie, x, y + 10);
         y-= 40 + 1;
     }
+
 }
 
 class Sprite extends Bebida{
