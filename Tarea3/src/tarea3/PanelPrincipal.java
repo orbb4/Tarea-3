@@ -201,7 +201,12 @@ public class PanelPrincipal extends JPanel{
                         x+=85;
                         y = 620;
                     } 
-            }}
+                }
+                if(bebidaRemovida != -1){
+                    comprador.eliminaBebida(i);
+                }
+                PanelPrincipal.this.repaint();
+            }
             public void mouseReleased(MouseEvent me) {
                 boton1Xcord = 655;
                 boton2Xcord = 655;
