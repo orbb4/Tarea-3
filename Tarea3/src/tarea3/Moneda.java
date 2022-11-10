@@ -66,6 +66,7 @@ class Moneda500 extends Moneda{
         g.setColor(Color.orange);
         g.fillOval(x, y, 20, 40);
         y-= 20 + 1;
+        
     }
 }
 class Moneda1000 extends Moneda{

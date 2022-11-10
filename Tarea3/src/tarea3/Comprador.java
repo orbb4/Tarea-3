@@ -1,7 +1,9 @@
 package tarea3;
 import java.awt.*;
+import javax.swing.*;
 import java.util.ArrayList;
-public class Comprador{    
+import javax.swing.SwingUtilities;
+public class Comprador extends JButton{    
     private String tipoBebida = null;
     private ArrayList<Moneda> monedasBolsillo;
     private ArrayList<Bebida> bolsilloBebidas;
@@ -14,6 +16,8 @@ public class Comprador{
     
     public Comprador(Moneda m, int b, Expendedor e){
         int vueltot;
+        this.setLayout(null);
+        this.setVisible(true);
         bolsilloBebidas = new ArrayList();
         monedasBolsillo = new ArrayList();
         boolean bebidaComprada = false;
@@ -85,18 +89,19 @@ public class Comprador{
         g.drawString("100 = ", 70, 30);
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
+        System.out.println("no");
         if(monedasBolsillo.size() > 0){
             x = 1050;
             y = 600;
-            monedasBolsillo.get(0).setXY(x, y);
+            monedasBolsillo.get(0).setXY(1050, 600);
             for(int i = 0; i < monedasBolsillo.size(); i++){
-                    if(i%17 == 0 && i != 0){
+                if(i%17 == 0 && i != 0){
                     y = 700;
                     x +=40;
-                    }
-            monedasBolsillo.get(i).paint(g);
-            y -= 40;
-            monedasBolsillo.get(i).setXY(x, y);
+                }
+                monedasBolsillo.get(i).setXY(x, y);
+                monedasBolsillo.get(i).paint(g);
+                y -= 40;
             }
         }      
     }  
@@ -125,5 +130,19 @@ public class Comprador{
     
     public  ArrayList<Moneda> getMonedasBolsillo(){
        return monedasBolsillo;
+    }
+    public void addMoneda(int cant){
+        switch(cant){
+            case 100:
+                monedasBolsillo.add(new Moneda100());
+                repaint();
+                break;
+            case 500:
+                monedasBolsillo.add(new Moneda500());
+                break;
+            case 1000:
+                monedasBolsillo.add(new Moneda1000());
+                break;
+        }
     }
 }

@@ -84,15 +84,15 @@ public class PanelPrincipal extends JPanel{
                 // colision mouse - monedas a seleccionar 
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>100 && me.getY()<200)){
                     System.out.println("100");
-                    //comprador.getMonedasBolsillo().add(new Moneda m);
+                    comprador.addMoneda(100);
                 }
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>300 && me.getY()<400)){
                     System.out.println("500");
-                    //comprador.getMonedasBolsillo().add(new Moneda500 m);
+                    comprador.addMoneda(500);
                 }
                 if((me.getX()>1225 && me.getX()<1335 && me.getY()>500 && me.getY()<600)){
                     System.out.println("1000");
-                    //comprador.getMonedasBolsillo().add(new Moneda1000 m);
+                    comprador.addMoneda(1000);
                 }
                 
  
