@@ -27,7 +27,6 @@ public class PanelPrincipal extends JPanel{
         }
         public void paint(Graphics g){
             super.paint(g);       
-            comprador.paint(g);
             exp.paint(g);
             Toolkit t = Toolkit.getDefaultToolkit(); 
             Image cocaImage = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
@@ -69,7 +68,7 @@ public class PanelPrincipal extends JPanel{
                     y = 650;
                 }
             }
-
+            comprador.paint(g);
 
         }
         private class EscuchaRaton  implements MouseListener {

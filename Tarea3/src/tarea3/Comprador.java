@@ -139,9 +139,11 @@ public class Comprador extends JButton{
                 break;
             case 500:
                 monedasBolsillo.add(new Moneda500());
+                repaint();
                 break;
             case 1000:
                 monedasBolsillo.add(new Moneda1000());
+                repaint();
                 break;
         }
     }

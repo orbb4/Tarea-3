@@ -40,8 +40,7 @@ class Moneda100 extends Moneda{
     }
     public void paint(Graphics g){              
         g.setColor(Color.YELLOW);
-        g.fillOval(x, y, 20, 40);
-        y-= 20 + 1;
+        g.fillOval(x, y, 40, 40);
     }
 }
 class Moneda500 extends Moneda{
@@ -64,7 +63,7 @@ class Moneda500 extends Moneda{
     }
     public void paint(Graphics g){              
         g.setColor(Color.orange);
-        g.fillOval(x, y, 20, 40);
+        g.fillOval(x, y, 40, 40);
         y-= 20 + 1;
         
     }
@@ -89,7 +88,7 @@ class Moneda1000 extends Moneda{
     }
     public void paint(Graphics g){              
         g.setColor(Color.RED);
-        g.fillOval(x, y, 20, 40);
+        g.fillOval(x, y, 40, 40);
         y-= 20 + 1;
     }
 }

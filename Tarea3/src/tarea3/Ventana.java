@@ -26,6 +26,7 @@ public class Ventana extends JFrame {
         panelPrincipal = new PanelPrincipal();     
         panelPrincipal.setBounds(0, 0, 1366, 700);
         
+        
         //Botones();
         this.add(panelPrincipal);      
 
