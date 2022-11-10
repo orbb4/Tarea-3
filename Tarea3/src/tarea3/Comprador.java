@@ -10,6 +10,7 @@ public class Comprador extends JButton{
     private int vuelto = 0;    
     private Polygon p;
     private int x=0,y=0;
+    private int MAXMON = 1;
     
     private Graphics gr;
     
@@ -94,17 +95,16 @@ public class Comprador extends JButton{
         g.drawString("1000 = ", 860, 30);
         System.out.println("no");
         if(monedasBolsillo.size() > 0){
-            x = 1050;
-            y = 650;
-            monedasBolsillo.get(0).setXY(1050, 600);
-            for(int i = 0; i < monedasBolsillo.size(); i++){
-                if(i%17 == 0 && i != 0){
-                    y = 650;
-                    x +=40;
-                }
-                monedasBolsillo.get(i).setXY(x, y);
-                monedasBolsillo.get(i).paint(g);
-                y -= 40;
+            switch(monedasBolsillo.get(0).getValor()){
+                case 100:
+                    monedasBolsillo.get(0).paint(g);
+                    break;
+                case 500:
+                    monedasBolsillo.get(0).paint(g);
+                    break;
+                case 1000:
+                    monedasBolsillo.get(0).paint(g);
+                    break;
             }
         }      
     }  
@@ -138,15 +138,31 @@ public class Comprador extends JButton{
        return monedasBolsillo;
     }
     public void addMoneda(int cant){
+        Moneda m;
         switch(cant){
             case 100:
-                monedasBolsillo.add(new Moneda100());
+                m = new Moneda100();
+                monedasBolsillo.add(m);
+                if(monedasBolsillo.size() > MAXMON){
+                    monedasBolsillo.remove(0);
+                }
+                m.setXY(515, 500);
                 break;
             case 500:
-                monedasBolsillo.add(new Moneda500());
+                m = new Moneda500();
+                monedasBolsillo.add(m);
+                if(monedasBolsillo.size() > MAXMON){
+                    monedasBolsillo.remove(0);
+                }
+                m.setXY(515, 500);
                 break;
             case 1000:
-                monedasBolsillo.add(new Moneda1000());
+                m = new Moneda1000();
+                monedasBolsillo.add(m);
+                if(monedasBolsillo.size() > MAXMON){
+                    monedasBolsillo.remove(0);
+                }
+                m.setXY(515, 500);
                 break;
         }
     }
