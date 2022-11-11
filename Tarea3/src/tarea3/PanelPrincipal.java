@@ -55,7 +55,8 @@ public class PanelPrincipal extends JPanel{
             // bolsillo de bebidas
             g.setColor(new Color(85, 65, 55));
             g.fillRect(725, 50, 170,700);
-            g.setColor(Color.WHITE);            
+            g.setColor(Color.WHITE);
+            g.drawString("INVENTARIO", 775, 60);            
             g.drawString("Clickee sobre una bebida", 742, 675);
             g.drawString("comprada para beberla", 747,695);
             // mensaje Bolsillo bebidas lleno:
