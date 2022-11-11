@@ -97,7 +97,7 @@ public class Expendedor{
         // deposito de monedas recibidas por comprarBebida
         //deposito en donde se añade moneda seleccionada para comprar
         g.setColor(Color.GRAY);
-        g.fillRect(xExp+395, yExp+380, 185, 150);//515.500
+        g.fillRect(xExp+395, yExp+450, 185, 150);//515.500
         //deposito de monedas de vuelto
         g.setColor(Color.GRAY);
         g.fillRect(xExp+30, yExp+570, 300, 120); //150.620

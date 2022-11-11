@@ -80,7 +80,11 @@ public class PanelPrincipal extends JPanel{
                 }
             }
             comprador.paint(g);
-
+            g.setColor(Color.WHITE);
+            if(exp.getTamano() == 9){
+                g.drawString("DEPOSITO DE VUELTO LLENO: debes", 460, 670);
+                g.drawString("retirar tu vuelto ", 460,690);
+            }
         }
         private class EscuchaRaton  implements MouseListener {
             public void mouseClicked(MouseEvent me){
@@ -117,7 +121,7 @@ public class PanelPrincipal extends JPanel{
             }
             
             public void mousePressed(MouseEvent me) {
-                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo){
+                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo && exp.getTamano()!=9){
                 // colision boton 1: comprar CocaCola
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
                     System.out.println("boton1");

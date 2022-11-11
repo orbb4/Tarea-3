@@ -112,25 +112,56 @@ class DepositoVuelto{
         int y=620;
         int x=150;
         int aux=150;
-        for(int i = 0; i < monedas.size(); i++){
+        for(int i = 0; i < 5; i++){ //monedas.size()
             monedas.get(i).setXY(x, y);
             monedas.get(i).paint(g);
+            x+= 40+1;
+
             if(i<6){
                 x+= 40+1;
             }
-            if(i>=7){
+            if(i>=4){
                 x=aux;
                 x+=40+1;
                 y=660;
             }
         }
-        for(int a = 7; a < monedas.size(); a++){
+        for(int a = 5; a < 9; a++){ //monedas.size()
+            x=aux;
+            monedas.get(a).setXY(x, y);
+            monedas.get(a).paint(g);
+            x+= 40+1;
+
+            /*if(i<6){
+                x+= 40+1;
+            }
+            if(i>=4){
+                x=aux;
+                x+=40+1;
+                y=660;
+            }*/
+        }
+        
+        /*for(int a = 4; a < monedas.size(); a++){
             monedas.get(a).setXY(aux, y);
             monedas.get(a).paint(g);
                 aux+=40+1;
                 y=660;
+        }*/
+        /*for(int i = 0; i < 9; i++){
+            monedas.get(i).setXY(x, y);
+            monedas.get(i).paint(g);
+            if(i<5){
+                x+= 40+1;
             }
-        }
+            if(i>=6){
+                x=aux;
+                x+=40+1;
+                y=660;
+            }
+        }*/
+    }
+       
         
 }
 
