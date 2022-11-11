@@ -97,10 +97,10 @@ public class Expendedor{
         // deposito de monedas recibidas por comprarBebida
         //deposito en donde se añade moneda seleccionada para comprar
         g.setColor(Color.GRAY);
-        g.fillRect(515, 500, 185, 150);
+        g.fillRect(xExp+395, yExp+380, 185, 150);//515.500
         //deposito de monedas de vuelto
         g.setColor(Color.GRAY);
-        g.fillRect(150, 620, 300, 120);
+        g.fillRect(xExp+30, yExp+570, 300, 120); //150.620
         depCocaCola.paint(g, 0, xExp+30, yExp+510);
         depSprite.paint(g, 1, xExp + 140, yExp+510);
         depFanta.paint(g, 2, xExp+250, yExp+510);

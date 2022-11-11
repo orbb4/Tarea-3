@@ -110,9 +110,6 @@ public class PanelPrincipal extends JPanel{
                 //colision mouse - deposito de vuelto
                 if((me.getX()>150 && me.getX()<450 && me.getY()>620 && me.getY()<720)){
                     System.out.println("click en deposito vuelto");
-                    /*for(int i=0; i<exp.getTamano(); i++){
-                        //comprador.addMoneda(100);
-                    }*/
                     PanelPrincipal.this.repaint();
                 }
                 
