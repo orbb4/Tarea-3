@@ -55,6 +55,19 @@ public class PanelPrincipal extends JPanel{
             // bolsillo de bebidas
             g.setColor(new Color(85, 65, 55));
             g.fillRect(725, 50, 170,700);
+            g.setColor(Color.WHITE); 
+            if(exp.getTamano()==4 || exp.getTamano()==9){
+                g.drawString("DBES RETIRAR TU VUELTO ANTES", 510,675);
+                g.drawString("DE PODER COMPRAR OTRA BEBIDA", 505,695);
+            }
+            
+            g.setColor(Color.BLACK); 
+            g.drawString("Clickee sobre", 360,650);
+            g.drawString("  el depósito", 360,665);
+            g.drawString("  para retirar", 360,680);
+            g.drawString("   su vuelto", 360,695); 
+           
+            
             g.setColor(Color.WHITE);            
             g.drawString("Clickee sobre una bebida", 742, 675);
             g.drawString("comprada para beberla", 747,695);
@@ -110,9 +123,9 @@ public class PanelPrincipal extends JPanel{
                 //colision mouse - deposito de vuelto
                 if((me.getX()>150 && me.getX()<450 && me.getY()>620 && me.getY()<720)){
                     System.out.println("click en deposito vuelto");
-                    /*for(int i=0; i<exp.getTamano(); i++){
-                        //comprador.addMoneda(100);
-                    }*/
+                    for(int i=0; i<exp.getTamano(); i++){
+                        exp.getDepositoVuelto().getMoneda();
+                    }
                     PanelPrincipal.this.repaint();
                 }
                 
@@ -120,7 +133,7 @@ public class PanelPrincipal extends JPanel{
             }
             
             public void mousePressed(MouseEvent me) {
-                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo){
+                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo && exp.getTamano()!=4 && exp.getTamano()!=9){
                 // colision boton 1: comprar CocaCola
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
                     System.out.println("boton1");
