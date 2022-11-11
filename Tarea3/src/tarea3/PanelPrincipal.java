@@ -126,9 +126,7 @@ public class PanelPrincipal extends JPanel{
                 }
                 //colision mouse - deposito de vuelto
                 if((me.getX()>150 && me.getX()<450 && me.getY()>620 && me.getY()<720)){
-                    System.out.println("click en deposito vuelto");
-<<<<<<< HEAD
-=======
+                    System.out.println("click en deposito vuelto"); 
                     if(exp.getTamano()==4){
                         for(int i=0; i<4; i++){
                             exp.getDepositoVuelto().getMoneda();
@@ -139,7 +137,6 @@ public class PanelPrincipal extends JPanel{
                             exp.getDepositoVuelto().getMoneda();
                         }
                     }
->>>>>>> beta
                     PanelPrincipal.this.repaint();
                 }
                 
@@ -147,11 +144,7 @@ public class PanelPrincipal extends JPanel{
             }
             
             public void mousePressed(MouseEvent me) {
-<<<<<<< HEAD
-                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo && exp.getTamano()!=9){
-=======
                 if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo && exp.getTamano()!=4 && exp.getTamano()!=9){
->>>>>>> beta
                 // colision boton 1: comprar CocaCola
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
                     System.out.println("boton1");

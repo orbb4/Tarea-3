@@ -111,7 +111,6 @@ class DepositoVuelto{
         //g.fillRect(150, 620, 300, 60); lugar donde van las monedas de vuelto
         int y=620;
         int x=150;
-<<<<<<< HEAD
         int aux=150;
         for(int i = 0; i < 5; i++){ //monedas.size()
             monedas.get(i).setXY(x, y);
@@ -122,22 +121,16 @@ class DepositoVuelto{
                 x+= 40+1;
             }
             if(i>=4){
-=======
-        int aux=109;
+                }
+        }
         for(int i = 0; i <monedas.size(); i++){
             monedas.get(i).setXY(x, y);
             monedas.get(i).paint(g);
             if(i<4){ //
                 x+= 40+1;
             }
-            /*if(i>=7){
->>>>>>> beta
-                x=aux;
-                x+=40+1;
-                y=660;
-            }*/
+            
         }
-<<<<<<< HEAD
         for(int a = 5; a < 9; a++){ //monedas.size()
             x=aux;
             monedas.get(a).setXY(x, y);
