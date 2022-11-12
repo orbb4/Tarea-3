@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Bebida.java</file>
             <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/PanelPrincipal.java</file>
@@ -15,5 +16,8 @@
             <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Tarea3.java</file>
             <file>file:/C:/Users/maria/OneDrive/Escritorio/SEMESTRE%202-2022/Programación%20II/tarea3.prog/Tarea-3/Tarea3/src/tarea3/Moneda.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> efb4d8cfe3691447a1f28907b6672343df078571
     </open-files>
 </project-private>
