@@ -14,7 +14,7 @@ public class PanelPrincipal extends JPanel{
         private Expendedor exp;
         private Moneda mon;
         private int maxBebidasBolsillo = 26;
-        private int maxMonedasBolsillo =48;
+        private int maxMonedasBolsillo =45;
         private int boton1Xcord = 655;
         private int boton2Xcord = 655;
         private int boton3Xcord = 655;
@@ -72,12 +72,24 @@ public class PanelPrincipal extends JPanel{
             g.setColor(Color.WHITE);            
             g.drawString("Clickee sobre una bebida", 742, 675);
             g.drawString("comprada para beberla", 747,695);
+            
+            g.setColor(Color.BLACK);            
+            g.drawString("  Puede clickear sobre una", 1050, 650);
+            g.drawString("    moneda de su bolsillo ", 1050,670);
+            g.drawString("  para comprar una bebida", 1050,690);
+            
             // mensaje Bolsillo bebidas lleno:
             g.setColor(Color.RED); 
             if(comprador.getBolsilloBebidas().size() == maxBebidasBolsillo){
                 g.drawString("BOLSILLO LLENO: debes beber una", 615, 25);
                 g.drawString("bebida antes de poder comprar otra", 615,45);
             }
+            g.setColor(Color.RED);
+            /*if((comprador.getBolsilloMonedas().size()+4<=maxMonedasBolsillo || comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo)){
+                g.drawString("TU BOLSILLO DE MONEDAS", 615, 25);
+                g.drawString("bebida antes de ", 615,45);
+            
+            }*/
             // bebidas en bolsillo del comprador:
             int x = 725;
             int y = 620;
@@ -96,7 +108,7 @@ public class PanelPrincipal extends JPanel{
             
             //monedas en el bolsillo del comprador:
             int xB = 1050;
-            int yB = 620;
+            int yB = 590;
             int a = 0;
             
             for(Moneda m: comprador.getBolsilloMonedas()){
@@ -104,9 +116,9 @@ public class PanelPrincipal extends JPanel{
                 m.paint(g);
                 yB-=41;
                 a++;
-                if(a%16==0){
+                if(a%15==0){
                     xB+=45;
-                    yB = 620;
+                    yB = 590;
                 }
             }
             comprador.paint(g);
@@ -258,6 +270,35 @@ public class PanelPrincipal extends JPanel{
                 }
                 if(bebidaRemovida != -1){
                     comprador.eliminaBebida(i);
+                }
+                
+                // detectamos si el usuario presionó una moneda del bolsillo para comprar
+                // MONEDAS ancho: 40 - alto: 40
+                int b = 0;
+                int xM = 1050;
+                int yM = 590;
+                int monedaRemovida=-1; // si el valor es -1 significa que el user no clickeo una moneda del bolsillo
+                for(Moneda m: comprador.getBolsilloMonedas()){
+                    System.out.println("X: " + x + ", " + xM+40 + " - Y: " + yM+40 + ", " + yM);
+                    // si se clickea una bebida, se guarda el index que la moneda seleccionada tiene en el bolsillo
+                    // y se rompe el ciclo for para eliminarla despues
+                    if(me.getX() >= xM && me.getX() <= xM+40 && me.getY() >= yM  && me.getY() <= yM+40){                        
+                        //b.beber();
+                        System.out.println(m);
+                        monedaRemovida = i;
+                        break;
+                    }
+                    b++;
+                    yM-=41;
+                    if(b%15==0){
+                        xM+=45;
+                        yM = 490;
+                    } 
+                }
+                if(monedaRemovida != -1){
+                    comprador.addMoneda(100);
+                    comprador.eliminaMoneda(b);
+                    //comprador.addMoneda(b);
                 }
                 PanelPrincipal.this.repaint();
             }
