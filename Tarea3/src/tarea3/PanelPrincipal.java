@@ -139,12 +139,12 @@ public class PanelPrincipal extends JPanel{
                     comprador.addMoneda(100);
                     PanelPrincipal.this.repaint();
                 }
-                if((me.getX()>1225 && me.getX()<1335 && me.getY()>300 && me.getY()<400)){
+                if((me.getX()>1225 && me.getX()<1335 && me.getY()>300 && me.getY()<400) && (comprador.getBolsilloMonedas().size()+4<=maxMonedasBolsillo || comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo)){
                     System.out.println("500");
                     comprador.addMoneda(500);
                     PanelPrincipal.this.repaint();
                 }
-                if((me.getX()>1225 && me.getX()<1335 && me.getY()>500 && me.getY()<600)){
+                if((me.getX()>1225 && me.getX()<1335 && me.getY()>500 && me.getY()<600) && (comprador.getBolsilloMonedas().size()+4<=maxMonedasBolsillo || comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo)){
                     System.out.println("1000");
                     comprador.addMoneda(1000);
                     PanelPrincipal.this.repaint();
@@ -176,7 +176,7 @@ public class PanelPrincipal extends JPanel{
             }
             
             public void mousePressed(MouseEvent me) {
-                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo && exp.getTamano()!=4 && exp.getTamano()!=9 && (comprador.getBolsilloMonedas().size()+4<=maxMonedasBolsillo || comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo)){
+                if(comprador.getBolsilloBebidas().size() != maxBebidasBolsillo && exp.getTamano()!=4 && exp.getTamano()!=9 ){
                 // colision boton 1: comprar CocaCola
                 if(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225){
                     System.out.println("boton1");
