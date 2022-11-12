@@ -84,12 +84,13 @@ public class PanelPrincipal extends JPanel{
                 g.drawString("BOLSILLO LLENO: debes beber una", 615, 25);
                 g.drawString("bebida antes de poder comprar otra", 615,45);
             }
+            //mensaje Bolsillo de bebidas por llenarse:
             g.setColor(Color.RED);
-            /*if((comprador.getBolsilloMonedas().size()+4<=maxMonedasBolsillo || comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo)){
-                g.drawString("TU BOLSILLO DE MONEDAS", 615, 25);
-                g.drawString("bebida antes de ", 615,45);
-            
-            }*/
+            if((comprador.getBolsilloMonedas().size()+4>=maxMonedasBolsillo)){
+                g.drawString("TU BOLSILLO NO PUEDE", 898, 95);
+                g.drawString(" GUARDAR MÁS VUELTO,", 898,115);
+                g.drawString("  USA TUS MONEDAS", 898,135);
+            }
             // bebidas en bolsillo del comprador:
             int x = 725;
             int y = 620;
