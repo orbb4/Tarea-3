@@ -41,6 +41,8 @@ class Moneda100 extends Moneda{
     public void paint(Graphics g){              
         g.setColor(Color.YELLOW);
         g.fillOval(x, y, 40, 40);
+        /*g.setColor(Color.BLACK);
+        g.drawString("Serie: " + numSerie, x, y+20);*/
     }
 }
 class Moneda500 extends Moneda{
@@ -64,6 +66,8 @@ class Moneda500 extends Moneda{
     public void paint(Graphics g){              
         g.setColor(Color.orange);
         g.fillOval(x, y, 40, 40);
+        /*g.setColor(Color.BLACK);
+        g.drawString("Serie: " + numSerie, x, y+20);*/
         
     }
 }
@@ -88,5 +92,7 @@ class Moneda1000 extends Moneda{
     public void paint(Graphics g){              
         g.setColor(Color.RED);
         g.fillOval(x, y, 40, 40);
+        /*g.setColor(Color.BLACK);
+        g.drawString("Serie: " + numSerie, x, y+20);*/
     }
 }

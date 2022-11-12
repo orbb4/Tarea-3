@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 public class Comprador extends JButton{    
     private String tipoBebida = null;
-    private ArrayList<Moneda> monedasBolsillo;
+    private ArrayList<Moneda> monedaDePago;
+    private ArrayList<Moneda> bolsilloMonedas;
     private ArrayList<Bebida> bolsilloBebidas;
     private int vuelto = 0;    
     private Polygon p;
@@ -22,7 +23,8 @@ public class Comprador extends JButton{
         this.setLayout(null);
         this.setVisible(true);
         bolsilloBebidas = new ArrayList();
-        monedasBolsillo = new ArrayList();
+        monedaDePago = new ArrayList();
+        bolsilloMonedas = new ArrayList();
         boolean bebidaComprada = false;
         try { 
             e.comprarBebida(m, b);
@@ -94,16 +96,16 @@ public class Comprador extends JButton{
         g.drawString("500 = ", 470, 30);
         g.drawString("1000 = ", 860, 30);
         System.out.println("no");
-        if(monedasBolsillo.size() > 0){
-            switch(monedasBolsillo.get(0).getValor()){
+        if(monedaDePago.size() > 0){
+            switch(monedaDePago.get(0).getValor()){
                 case 100:
-                    monedasBolsillo.get(0).paint(g);
+                    monedaDePago.get(0).paint(g);
                     break;
                 case 500:
-                    monedasBolsillo.get(0).paint(g);
+                    monedaDePago.get(0).paint(g);
                     break;
                 case 1000:
-                    monedasBolsillo.get(0).paint(g);
+                    monedaDePago.get(0).paint(g);
                     break;
             }
         }      
@@ -135,17 +137,18 @@ public class Comprador extends JButton{
         return tipoBebida;
     }
     
-    public  ArrayList<Moneda> getMonedasBolsillo(){
-       return monedasBolsillo;
+    public  ArrayList<Moneda> getMonedaDePago(){
+       return monedaDePago;
     }
+    
     public void addMoneda(int cant){
         Moneda m;
         switch(cant){
             case 100:
                 m = new Moneda100();
-                monedasBolsillo.add(m);
-                if(monedasBolsillo.size() > MAXMON){
-                    monedasBolsillo.remove(0);
+                monedaDePago.add(m);
+                if(monedaDePago.size() > MAXMON){
+                    monedaDePago.remove(0);
                     
                     
                 }
@@ -153,26 +156,37 @@ public class Comprador extends JButton{
                 break;
             case 500:
                 m = new Moneda500();
-                monedasBolsillo.add(m);
-                if(monedasBolsillo.size() > MAXMON){
-                    monedasBolsillo.remove(0);
+                monedaDePago.add(m);
+                if(monedaDePago.size() > MAXMON){
+                    monedaDePago.remove(0);
                 }
                 m.setXY(515, 500);
                 break;
             case 1000:
                 m = new Moneda1000();
-                monedasBolsillo.add(m);
-                if(monedasBolsillo.size() > MAXMON){
-                    monedasBolsillo.remove(0);
+                monedaDePago.add(m);
+                if(monedaDePago.size() > MAXMON){
+                    monedaDePago.remove(0);
                 }
                 m.setXY(515, 500);
                 break;
         }
     }
     public Moneda removeMoneda(){
-        if (monedasBolsillo.size() != 0) return monedasBolsillo.remove(0);
+        if (monedaDePago.size() != 0) return monedaDePago.remove(0);
         else{
             return null;
         }
     }
+    public void addMonedaBolsillo(Moneda m){
+        //Moneda m = new Moneda100();
+        bolsilloMonedas.add(m);
+    }
+    public ArrayList<Moneda> getBolsilloMonedas(){
+        return bolsilloMonedas;
+    }
+    public void eliminaMoneda(int i){
+        bolsilloMonedas.remove(i);
+    }
+    
 }

@@ -14,6 +14,7 @@ public class PanelPrincipal extends JPanel{
         private Expendedor exp;
         private Moneda mon;
         private int maxBebidasBolsillo = 26;
+        private int maxMonedasBolsillo =34;
         private int boton1Xcord = 655;
         private int boton2Xcord = 655;
         private int boton3Xcord = 655;
@@ -92,12 +93,23 @@ public class PanelPrincipal extends JPanel{
                     y = 620;
                 }
             }
-            comprador.paint(g);
-            g.setColor(Color.WHITE);
-            if(exp.getTamano() == 9){
-                g.drawString("DEPOSITO DE VUELTO LLENO: debes", 460, 670);
-                g.drawString("retirar tu vuelto ", 460,690);
+            
+            //monedas en el bolsillo del comprador:
+            int xB = 1050;
+            int yB = 620;
+            int a = 0;
+            
+            for(Moneda m: comprador.getBolsilloMonedas()){
+                m.setXY(xB, yB);
+                m.paint(g);
+                yB-=41;
+                a++;
+                if(a%17==0){
+                    xB+=45;
+                    yB = 620;
+                }
             }
+            comprador.paint(g);
         }
         private class EscuchaRaton  implements MouseListener {
             public void mouseClicked(MouseEvent me){
@@ -126,7 +138,13 @@ public class PanelPrincipal extends JPanel{
                 }
                 //colision mouse - deposito de vuelto
                 if((me.getX()>150 && me.getX()<450 && me.getY()>620 && me.getY()<720)){
-                    System.out.println("click en deposito vuelto"); 
+                    System.out.println("click en deposito vuelto");
+                    int numMonedas = exp.getDepositoVuelto().getTamano();
+                    for(int i=0; i<numMonedas; i++){
+                        System.out.println("ola: "+exp.getDepositoVuelto().getTamano());  
+                        System.out.println(comprador.getBolsilloMonedas());   
+                        comprador.addMonedaBolsillo(exp.getDepositoVuelto().getMoneda());
+                    }
                     if(exp.getTamano()==4){
                         for(int i=0; i<4; i++){
                             exp.getDepositoVuelto().getMoneda();
@@ -153,9 +171,9 @@ public class PanelPrincipal extends JPanel{
                     // toDo: usar la moneda seleccionada en vez de la misma de 1000 por defecto
 
                     try{
-                        if(comprador.getMonedasBolsillo().size() != 0){
-                            exp.addMonedas(comprador.getMonedasBolsillo().get(0));
-                            exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 0);
+                        if(comprador.getMonedaDePago().size() != 0){
+                            exp.addMonedas(comprador.getMonedaDePago().get(0));
+                            exp.comprarBebida(comprador.getMonedaDePago().remove(0), 0);
                         }
                         else{
                             throw new PagoIncorrectoException("No hay monedas en el bolsillo");
@@ -175,9 +193,9 @@ public class PanelPrincipal extends JPanel{
                     boton2Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     try{
-                        if(comprador.getMonedasBolsillo().size() != 0){
-                            exp.addMonedas(comprador.getMonedasBolsillo().get(0));
-                            exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 1);
+                        if(comprador.getMonedaDePago().size() != 0){
+                            exp.addMonedas(comprador.getMonedaDePago().get(0));
+                            exp.comprarBebida(comprador.getMonedaDePago().remove(0), 1);
                         }
                         else{
                             throw new PagoIncorrectoException("No hay monedas en el bolsillo");
@@ -196,9 +214,9 @@ public class PanelPrincipal extends JPanel{
                     boton3Xcord = 658;
                     // toDo: crear comprador que tenga la moneda seleccionada en vez de la misma de 1000 por defecto
                     try{
-                        if(comprador.getMonedasBolsillo().size() != 0){
-                            exp.addMonedas(comprador.getMonedasBolsillo().get(0));
-                            exp.comprarBebida(comprador.getMonedasBolsillo().remove(0), 2);
+                        if(comprador.getMonedaDePago().size() != 0){
+                            exp.addMonedas(comprador.getMonedaDePago().get(0));
+                            exp.comprarBebida(comprador.getMonedaDePago().remove(0), 2);
                         }
                         else{
                             throw new PagoIncorrectoException("No hay monedas en el bolsillo");
