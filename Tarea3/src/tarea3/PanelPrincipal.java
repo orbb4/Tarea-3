@@ -70,19 +70,14 @@ public class PanelPrincipal extends JPanel{
            
             
             g.setColor(Color.WHITE);            
-<<<<<<< HEAD
             g.drawString("Clickee sobre una bebida", 730, 675);
             g.drawString("comprada para beberla", 734,695);
-=======
-            g.drawString("Clickee sobre una bebida", 742, 675);
-            g.drawString("comprada para beberla", 747,695);
             
             g.setColor(Color.BLACK);            
             g.drawString("  Puede clickear sobre una", 1050, 650);
             g.drawString("    moneda de su bolsillo ", 1050,670);
             g.drawString("  para comprar una bebida", 1050,690);
             
->>>>>>> cote
             // mensaje Bolsillo bebidas lleno:
             g.setColor(Color.RED); 
             if(comprador.getBolsilloBebidas().size() == maxBebidasBolsillo){
