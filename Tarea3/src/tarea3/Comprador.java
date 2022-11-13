@@ -178,6 +178,13 @@ public class Comprador extends JButton{
             return null;
         }
     }
+    public void addMonedaBolsilloExp(Moneda m){
+        monedaDePago.add(m);
+        if(monedaDePago.size() > MAXMON){
+            monedaDePago.remove(0);    
+        }
+        m.setXY(515, 500);
+    }
     public void addMonedaBolsillo(Moneda m){
         //Moneda m = new Moneda100();
         bolsilloMonedas.add(m);

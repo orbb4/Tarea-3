@@ -86,11 +86,22 @@ public class PanelPrincipal extends JPanel{
             }
             //mensaje Bolsillo de bebidas por llenarse:
             g.setColor(Color.RED);
-            if((comprador.getBolsilloMonedas().size()+4>=maxMonedasBolsillo)){
-                g.drawString("TU BOLSILLO NO PUEDE", 898, 95);
+            if((comprador.getBolsilloMonedas().size()+4>maxMonedasBolsillo)){
+                g.drawString("YA NO PUEDES", 898, 95);
                 g.drawString(" GUARDAR MÁS VUELTO,", 898,115);
-                g.drawString("  USA TUS MONEDAS", 898,135);
+                g.drawString("USA TUS MONEDAS O", 898,135);
+                g.drawString("SELECCIONA UNA DE 100", 898,155);
             }
+            
+            if((comprador.getBolsilloMonedas().size()+4<=maxMonedasBolsillo && comprador.getBolsilloMonedas().size()+9>maxMonedasBolsillo)){
+                g.drawString("NO PUEDES USAR", 898, 95);
+                g.drawString("UNA MONEDA DE 1000,", 898,115);
+                g.drawString("USA TUS MONEDAS O", 898,135);
+                g.drawString("SELECCIONA UNA DE 100", 898,155);
+                g.drawString("  O UNA DE 500", 898,175);
+            }
+            
+            
             // bebidas en bolsillo del comprador:
             int x = 725;
             int y = 620;
@@ -144,7 +155,7 @@ public class PanelPrincipal extends JPanel{
                     comprador.addMoneda(500);
                     PanelPrincipal.this.repaint();
                 }
-                if((me.getX()>1225 && me.getX()<1335 && me.getY()>500 && me.getY()<600) && (comprador.getBolsilloMonedas().size()+4<=maxMonedasBolsillo || comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo)){
+                if((me.getX()>1225 && me.getX()<1335 && me.getY()>500 && me.getY()<600) && (comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo || comprador.getBolsilloMonedas().size()+9<=maxMonedasBolsillo)){
                     System.out.println("1000");
                     comprador.addMoneda(1000);
                     PanelPrincipal.this.repaint();
@@ -279,14 +290,16 @@ public class PanelPrincipal extends JPanel{
                 int xM = 1050;
                 int yM = 590;
                 int monedaRemovida=-1; // si el valor es -1 significa que el user no clickeo una moneda del bolsillo
+                Moneda monedaExp = new Moneda();
                 for(Moneda m: comprador.getBolsilloMonedas()){
                     System.out.println("X: " + x + ", " + xM+40 + " - Y: " + yM+40 + ", " + yM);
-                    // si se clickea una bebida, se guarda el index que la moneda seleccionada tiene en el bolsillo
+                    // si se clickea una moneda, se guarda el index que la moneda seleccionada tiene en el bolsillo
                     // y se rompe el ciclo for para eliminarla despues
                     if(me.getX() >= xM && me.getX() <= xM+40 && me.getY() >= yM  && me.getY() <= yM+40){                        
                         //b.beber();
                         System.out.println(m);
-                        monedaRemovida = i;
+                        monedaRemovida = b;//b
+                        monedaExp=comprador.getBolsilloMonedas().get(b);
                         break;
                     }
                     b++;
@@ -297,9 +310,10 @@ public class PanelPrincipal extends JPanel{
                     } 
                 }
                 if(monedaRemovida != -1){
-                    comprador.addMoneda(100);
+                    comprador.addMonedaBolsilloExp(monedaExp);
+                    //monedaExp=comprador.getBolsilloMonedas().get(b);
+                    //comprador.addMoneda(100);
                     comprador.eliminaMoneda(b);
-                    //comprador.addMoneda(b);
                 }
                 PanelPrincipal.this.repaint();
             }
