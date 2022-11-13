@@ -83,7 +83,6 @@ class Deposito{
 }
 
 class DepositoVuelto{
-    private final Color GRIS = new Color(128, 128, 128);
     private ArrayList<Moneda> monedas;
     public DepositoVuelto(){
         monedas = new ArrayList();
@@ -101,9 +100,33 @@ class DepositoVuelto{
             return null;
         }      
     }
-    
-    public void paint(Graphics g, int x, int y){
-        g.setColor(GRIS);
-        g.fillRect(x, y, 185, 150);
+    public int getTamano(){
+        return monedas.size();
     }
+    public ArrayList<Moneda> getArrayMonedas(){
+        return monedas;
+    }
+    
+    public void paint(Graphics g){
+        //g.fillRect(150, 620, 300, 60); lugar donde van las monedas de vuelto
+        int y=620;
+        int x=150;
+        int aux=109;
+        for(int i = 0; i <monedas.size(); i++){
+            monedas.get(i).setXY(x, y);
+            monedas.get(i).paint(g);
+            if(i<4){ //
+                x+= 40+1;
+            }
+        }
+        for(int a = 5; a < monedas.size(); a++){//7
+            aux+=40+1;
+            y=660;
+            monedas.get(a).setXY(aux, y);
+            monedas.get(a).paint(g);
+        }
+    }
+         
 }
+
+
