@@ -56,6 +56,13 @@ public class PanelPrincipal extends JPanel{
             // bolsillo de bebidas
             g.setColor(new Color(85, 65, 55));
             g.fillRect(725, 50, 170,700);
+            // TEXTO INVENTARIO
+            /*
+            g.setColor(Color.WHITE);
+           
+            g.drawString("Clickee sobre una bebida", 742, 675);
+            g.drawString("comprada para beberla", 747,695);*/
+            // TEXTO VUELTO
             g.setColor(Color.WHITE); 
             if(exp.getTamano()==4 || exp.getTamano()==9){
                 g.drawString("DBES RETIRAR TU VUELTO ANTES", 510,675);
@@ -69,15 +76,16 @@ public class PanelPrincipal extends JPanel{
             g.drawString("   su vuelto", 360,695); 
            
             
-            g.setColor(Color.WHITE);            
-            g.drawString("Clickee sobre una bebida", 730, 675);
-            g.drawString("comprada para beberla", 734,695);
+            g.setColor(Color.WHITE);
+            g.drawString("INVENTARIO", 775, 60); 
+            g.drawString("Clickee sobre una bebida", 742, 675);
+            g.drawString("comprada para beberla", 747,695);
             
             g.setColor(Color.BLACK);            
             g.drawString("  Puede clickear sobre una", 1050, 650);
             g.drawString("    moneda de su bolsillo ", 1050,670);
             g.drawString("  para comprar una bebida", 1050,690);
-            
+
             // mensaje Bolsillo bebidas lleno:
             g.setColor(Color.RED); 
             if(comprador.getBolsilloBebidas().size() == maxBebidasBolsillo){
