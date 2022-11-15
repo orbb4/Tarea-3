@@ -1,6 +1,7 @@
  package tarea3;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 class Moneda{
@@ -42,6 +43,7 @@ class Moneda100 extends Moneda{
         g.setColor(Color.YELLOW);
         g.fillOval(x, y, 40, 40);
         g.setColor(Color.BLACK);
+        g.setFont( new Font( "Arial", Font.BOLD, 10 ) );
         g.drawString("Serie: " + numSerie, x, y+20);
     }
 }
@@ -67,6 +69,7 @@ class Moneda500 extends Moneda{
         g.setColor(Color.orange);
         g.fillOval(x, y, 40, 40);
         g.setColor(Color.BLACK);
+        g.setFont( new Font( "Arial", Font.BOLD, 10 ) );
         g.drawString("Serie: " + numSerie, x, y+20);
         
     }
@@ -93,6 +96,7 @@ class Moneda1000 extends Moneda{
         g.setColor(Color.RED);
         g.fillOval(x, y, 40, 40);
         g.setColor(Color.BLACK);
+        g.setFont( new Font( "Arial", Font.BOLD, 10 ) );
         g.drawString("Serie: " + numSerie, x, y+20);
     }
 }
