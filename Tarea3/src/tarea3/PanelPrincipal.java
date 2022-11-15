@@ -148,7 +148,10 @@ public class PanelPrincipal extends JPanel{
             public void mouseClicked(MouseEvent me){
                 
                 // colision mouse -  expendedor: rellena depositos de bebida vacios
-                if((me.getX() >= exp.getExpRect().getMinX() && me.getX() <= exp.getExpRect().getMaxX())&&( me.getY() >= exp.getExpRect().getMinY() && me.getY() <= exp.getExpRect().getMaxY())){
+                if((me.getX() >= exp.getExpRect().getMinX() && me.getX() <= exp.getExpRect().getMaxX())&&( me.getY() >= exp.getExpRect().getMinY() && me.getY() <= exp.getExpRect().getMaxY()) && !(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225)
+                    && !(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 175  && me.getY() <= 225)
+                    && !(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 275  && me.getY() <= 325)
+                    && !(me.getX() >= 655 && me.getX() <= 705 && me.getY() >= 375  && me.getY() <= 425)){
                     exp.llenarDepositosVacios();
                     PanelPrincipal.this.repaint();
                     
