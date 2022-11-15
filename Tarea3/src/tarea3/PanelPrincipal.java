@@ -30,6 +30,7 @@ public class PanelPrincipal extends JPanel{
         public void paint(Graphics g){
             super.paint(g);       
             exp.paint(g);
+            // logos bebidas
             Toolkit t = Toolkit.getDefaultToolkit(); 
             Image cocaImage = new ImageIcon(this.getClass().getResource("cocacola.jpg")).getImage();
             Image spriteImage = new ImageIcon(this.getClass().getResource("sprite.jpg")).getImage();

@@ -88,6 +88,9 @@ public class Expendedor{
     public void paint(Graphics g){
         int xExp = 120;
         int yExp = 50;
+        //parte izquierda expendedor
+        g.setColor(Color.GRAY);
+        g.fillRect(xExp-200, yExp, 600, 900);
         // exterior expendedor 
         g.setColor(new Color(30, 40, 40));
         g.fillRect(xExp, yExp, 600, 900);
@@ -104,10 +107,26 @@ public class Expendedor{
         depCocaCola.paint(g, 0, xExp+30, yExp+510);
         depSprite.paint(g, 1, xExp + 140, yExp+510);
         depFanta.paint(g, 2, xExp+250, yExp+510);
+
         depositoVuelto.paint(g);
+        int ymx =yExp+600;
+        int xmx =xExp-120;
+        int i = 0;
         for(Moneda mx: depMonedas){
+            mx.setXY(xmx, ymx);
             mx.paint(g);
+            ymx-=40;
+            if(i == 15){
+                xmx +=40;
+                ymx = yExp+600;
+            }
+            if(i%45==0 && i!=0){
+                xmx-=40;
+                ymx = yExp+600;
+            }
+            i++;
         }
+        
         
         
     }
