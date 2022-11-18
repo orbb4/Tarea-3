@@ -107,8 +107,15 @@ public class Expendedor{
         depCocaCola.paint(g, 0, xExp+30, yExp+510);
         depSprite.paint(g, 1, xExp + 140, yExp+510);
         depFanta.paint(g, 2, xExp+250, yExp+510);
-
+        // texto precio
+        int tamanoFuente = g.getFont().getSize();
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(g.getFont().getName(), Font.PLAIN, 42)); 
+        g.drawString("$100", 515,130);
+        // devolvemos la fuente a su tamaño original
+        g.setFont(new Font(g.getFont().getName(), Font.PLAIN, tamanoFuente)); 
         depositoVuelto.paint(g);
+        // paint de monedas
         int ymx =yExp+600;
         int xmx =xExp-120;
         int i = 0;

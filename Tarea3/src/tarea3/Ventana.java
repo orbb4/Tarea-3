@@ -15,7 +15,8 @@ public class Ventana extends JFrame {
         this.setLayout(null);
         this.setTitle("Expendedor");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); 
-        this.setSize(1366, 700); 
+        //this.setSize(1366, 700); 
+        this.setSize(1366, 740); 
         
         /*this.setLocationRelativeTo(null);
         this.setMinimumSize(new Dimension(200,200));*/
